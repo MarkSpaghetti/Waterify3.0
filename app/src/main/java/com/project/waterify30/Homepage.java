@@ -1,0 +1,30 @@
+package com.project.waterify30;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+
+public class Homepage extends AppCompatActivity {
+    private ImageButton buttonProfile;
+    private Logic logic = new Logic();
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_homepage);
+
+
+        buttonProfile = (ImageButton)findViewById(R.id.button_profile);
+        buttonProfile.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                logic.openActivity(Homepage.this, Profile.class);
+            }
+        });
+
+    }
+}
