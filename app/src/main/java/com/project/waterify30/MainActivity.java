@@ -10,6 +10,9 @@ import android.widget.ImageButton;
 public class MainActivity extends AppCompatActivity {
     boolean logIn = true;
     private ImageButton button;
+    Logic logic;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             intent = new Intent(MainActivity.this, Homepage.class);
         }
         else {
-            intent = new Intent(MainActivity.this, Profile.class);
+            intent = new Intent(MainActivity.this, Welcoming.class);
         }
         startActivity(intent);
 

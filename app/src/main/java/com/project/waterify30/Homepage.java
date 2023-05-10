@@ -8,7 +8,10 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class Homepage extends AppCompatActivity {
-    private ImageButton buttonProfile;
+    private ImageButton buttonProfile, buttonStatistics, buttonSocials, buttonStore, buttonQuiz;
+
+    int droplets;
+    int experience;
     private Logic logic = new Logic();
 
 
@@ -22,9 +25,12 @@ public class Homepage extends AppCompatActivity {
         buttonProfile.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+
                 logic.openActivity(Homepage.this, Profile.class);
             }
         });
+
+
 
     }
 }
