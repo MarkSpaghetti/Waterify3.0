@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:background="@color/orange"
         app:layout_constraintTop_toTopOf="parent"
-        android:minHeight="80dp">
+        android:minHeight="90dp">
 
         <TextView
             android:id="@+id/toolbar_title"
@@ -20,7 +20,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Settings"
-            android:textSize="25dp"/>
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
     </Toolbar>
+
+    <include android:id="@+id/call_close_button" layout="@layout/header_close_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
