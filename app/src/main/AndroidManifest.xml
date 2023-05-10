@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Waterify30"
         tools:targetApi="31">
         <activity
+            android:name=".UserGarden"
+            android:exported="false" />
+        <activity
             android:name=".Cups"
             android:exported="false" />
         <activity
