@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Waterify30"
         tools:targetApi="31">
         <activity
+            android:name=".Notifications_Frequency"
+            android:exported="false" />
+        <activity
             android:name=".FriendGarden"
             android:exported="false" />
         <activity
