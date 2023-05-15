@@ -7,7 +7,6 @@
     tools:context=".Settings">
 
     <Toolbar
-        android:id="@+id/settings_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/orange"
@@ -15,7 +14,6 @@
         android:minHeight="90dp">
 
         <TextView
-            android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -25,6 +23,6 @@
             android:textColor="@color/black"/>
     </Toolbar>
 
-    <include android:id="@+id/call_close_button" layout="@layout/header_close_button" />
+    <include layout="@layout/header_close_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

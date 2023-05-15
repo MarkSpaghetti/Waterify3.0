@@ -88,7 +88,6 @@
 
 
     <ImageButton
-        android:id="@+id/droplets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -98,7 +97,6 @@
         app:layout_constraintTop_toTopOf="@id/navigation_buttons" />
 
     <ImageButton
-        android:id="@+id/stars"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -111,7 +109,6 @@
         />
 
     <ImageButton
-        android:id="@+id/quiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -123,7 +120,7 @@
 
 
     <ImageButton
-        android:id="@+id/store"
+        android:id="@+id/shop_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
