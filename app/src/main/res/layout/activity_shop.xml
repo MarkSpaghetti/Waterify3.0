@@ -4,13 +4,118 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Shop">
+    tools:context=".Shop"
+    android:background="@color/light_green">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+    <ImageButton
+        android:id="@+id/statistics_button"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="183dp" />
+        android:layout_marginStart="30dp"
+        android:src="@drawable/baseline_bar_chart_24"
+        android:background="@drawable/hp_buttons_background"
+        android:padding="10dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/home_button"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageButton
+        android:id="@+id/home_button"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_home_black_24dp"
+        android:background="@drawable/hp_buttons_background"
+        android:padding="10dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/statistics_button"
+        app:layout_constraintEnd_toStartOf="@id/socials_button"
+        />
+
+    <ImageButton
+        android:id="@+id/socials_button"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/baseline_people_outline_24dp"
+        android:background="@drawable/hp_buttons_background"
+        android:padding="10dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/home_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/ImageView1"
+        android:layout_width="334dp"
+        android:layout_height="555dp"
+        android:background="@drawable/green_background"
+        app:layout_constraintBottom_toTopOf="@+id/home_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714" />
+
+    <ImageView
+        android:id="@+id/ImageView2"
+        android:layout_width="300dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="@+id/ImageView1"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/ImageView3"
+        android:layout_width="300dp"
+        android:layout_height="15dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@+id/ImageView2"
+        app:layout_constraintEnd_toEndOf="@+id/ImageView1"
+        app:layout_constraintStart_toStartOf="@+id/ImageView1"
+        app:layout_constraintTop_toBottomOf="@+id/ImageView4" />
+
+    <ImageView
+        android:id="@+id/ImageView4"
+        android:layout_width="300dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="148dp"
+        android:background="@color/grey"
+        app:layout_constraintStart_toStartOf="@+id/ImageView1"
+        app:layout_constraintTop_toTopOf="@+id/ImageView1" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="330dp"
+            android:layout_height="150dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="330dp"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/plant" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="330dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/plant" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
