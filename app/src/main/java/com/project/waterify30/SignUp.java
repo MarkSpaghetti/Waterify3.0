@@ -52,7 +52,9 @@ public class SignUp extends AppCompatActivity {
         goLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 logic.openActivity(SignUp.this, LogIn.class);
+                finish();
             }
         });
 
