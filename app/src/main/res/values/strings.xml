@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Waterify3.0</string>
+    <string name="login">Login</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="signup">signup</string>
+    <string name="register">Register</string>
+    <string name="tap_to_login">Tap to login</string>
+    <string name="create_an_account">Create an account?</string>
+    <string name="log_out">Log out</string>
 </resources>

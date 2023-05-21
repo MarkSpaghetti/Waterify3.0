@@ -8,6 +8,7 @@ public class Logic {
 
     void openActivity(Context fromActivity ,Class activityToOpen){
         Intent intent = new Intent( fromActivity, activityToOpen);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         fromActivity.startActivity(intent);
     }
 
