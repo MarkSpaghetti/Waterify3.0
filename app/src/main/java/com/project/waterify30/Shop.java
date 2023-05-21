@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 
 public class Shop extends AppCompatActivity {
 
-    private ImageButton buttonHome;
+    private ImageButton buttonHome, plant1;
     private Logic logic = new Logic();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
