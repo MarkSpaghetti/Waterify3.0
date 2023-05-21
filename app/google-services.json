@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "683200369246",
+    "project_id": "waterfy-4bc2e",
+    "storage_bucket": "waterfy-4bc2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683200369246:android:9c74a09d69ce0cbc5d5acf",
+        "android_client_info": {
+          "package_name": "com.project.waterify30"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683200369246-je90541c4aeb0ehjd3ae1mvp8v1kaqr8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQUM2WnzZKL2cZoc9d8sjJkvT05T7TDLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683200369246-je90541c4aeb0ehjd3ae1mvp8v1kaqr8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
