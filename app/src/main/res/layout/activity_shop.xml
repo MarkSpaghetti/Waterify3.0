@@ -98,8 +98,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/ImageView4"
         app:layout_constraintEnd_toEndOf="@+id/ImageView1"
-        app:layout_constraintStart_toStartOf="@+id/ImageView1"
-        app:layout_constraintTop_toTopOf="@+id/ImageView1">
+        app:layout_constraintStart_toStartOf="@+id/ImageView1">
 
         <HorizontalScrollView
             android:id="@+id/horizontalscrollView"
@@ -116,8 +115,7 @@
                     android:layout_height="fill_parent"
                     android:backgroundTint="@color/dark_green"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/plant_1">
-                </ImageButton>
+                    android:src="@drawable/plant_1"></ImageButton>
 
                 <ImageButton
                     android:id="@+id/plant2"
@@ -125,8 +123,7 @@
                     android:layout_height="fill_parent"
                     android:backgroundTint="@color/dark_green"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/plant_2">
-                </ImageButton>
+                    android:src="@drawable/plant_2"></ImageButton>
 
                 <ImageButton
                     android:id="@+id/plant3"
@@ -134,8 +131,7 @@
                     android:layout_height="fill_parent"
                     android:backgroundTint="@color/dark_green"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/plant_3">
-                </ImageButton>
+                    android:src="@drawable/plant_3"></ImageButton>
 
                 <ImageButton
                     android:id="@+id/plant4"
@@ -143,8 +139,7 @@
                     android:layout_height="fill_parent"
                     android:backgroundTint="@color/dark_green"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/plant_4">
-                </ImageButton>
+                    android:src="@drawable/plant_4"></ImageButton>
 
                 <ImageButton
                     android:id="@+id/plant5"
@@ -152,8 +147,7 @@
                     android:layout_height="fill_parent"
                     android:backgroundTint="@color/dark_green"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/plant_5">
-                </ImageButton>
+                    android:src="@drawable/plant_5"></ImageButton>
 
                 <ImageButton
                     android:id="@+id/plant6"
@@ -161,8 +155,7 @@
                     android:layout_height="fill_parent"
                     android:backgroundTint="@color/dark_green"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/plant_6">
-                </ImageButton>
+                    android:src="@drawable/plant_6"></ImageButton>
 
                 <ImageButton
                     android:id="@+id/plant7"
@@ -170,8 +163,7 @@
                     android:layout_height="fill_parent"
                     android:backgroundTint="@color/dark_green"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/plant_7">
-                </ImageButton>
+                    android:src="@drawable/plant_7"></ImageButton>
 
                 <ImageButton
                     android:id="@+id/plant8"
@@ -179,8 +171,7 @@
                     android:layout_height="fill_parent"
                     android:backgroundTint="@color/dark_green"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/plant_8">
-                </ImageButton>
+                    android:src="@drawable/plant_8"></ImageButton>
 
                 <ImageButton
                     android:id="@+id/plant9"
@@ -188,8 +179,7 @@
                     android:layout_height="fill_parent"
                     android:backgroundTint="@color/dark_green"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/plant_9">
-                </ImageButton>
+                    android:src="@drawable/plant_9"></ImageButton>
 
                 <ImageButton
                     android:id="@+id/plant10"
@@ -197,8 +187,7 @@
                     android:layout_height="fill_parent"
                     android:backgroundTint="@color/dark_green"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/plant_10">
-                </ImageButton>
+                    android:src="@drawable/plant_10"></ImageButton>
 
             </LinearLayout>
 
@@ -319,8 +308,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/ImageView2"
         app:layout_constraintEnd_toEndOf="@+id/ImageView1"
-        app:layout_constraintStart_toStartOf="@+id/ImageView1"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10">
+        app:layout_constraintStart_toStartOf="@+id/ImageView1">
 
         <HorizontalScrollView
             android:id="@+id/horizontalscrollView3"
