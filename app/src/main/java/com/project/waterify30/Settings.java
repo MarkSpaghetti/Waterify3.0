@@ -7,9 +7,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-public class Settings extends AppCompatActivity {
+public class Settings extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     String[] healthItems = {"healthProblem1", "healthProblem2", "healthProblem3"};
     AutoCompleteTextView healthConEnter;
@@ -20,16 +21,23 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        healthConEnter = findViewById(R.id.health_con_enter);
-        adapterHealthItems = new ArrayAdapter<String>(this,R.layout.list_item_health_con);
-        healthConEnter.setAdapter(adapterHealthItems);
+        Spinner spinner = (Spinner) findViewById(R.id.health_spinner);
+        spinner.setOnItemSelectedListener(this);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,healthItems);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
 
-        healthConEnter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String item = parent.getItemAtPosition(position).toString();
-                Toast.makeText(getApplicationContext(),"Item: " + item, Toast.LENGTH_SHORT).show();
-            }
-        });
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
+        Toast.makeText(getApplicationContext(),healthItems[position] , Toast.LENGTH_LONG).show();
+    }
+    @Override
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // TODO Auto-generated method stub
     }
 }
+
