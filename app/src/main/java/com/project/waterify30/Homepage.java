@@ -39,7 +39,7 @@ public class Homepage extends AppCompatActivity {
         });
 
         buttonGarden = (ImageButton) findViewById(R.id.to_garden_button);
-        buttonStore.setOnClickListener(new View.OnClickListener(){
+        buttonGarden.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
 
