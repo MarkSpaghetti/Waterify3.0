@@ -2,10 +2,10 @@ package com.project.waterify30;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ReactiveGuide;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,14 +18,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.HashMap;
-
-public class SignUp extends AppCompatActivity {
+public class LogIn extends AppCompatActivity {
     private Logic logic = new Logic();
     TextInputEditText editTEmail,editTPassword;
-    Button buttonSignup;
+    Button buttonLogIn;
     FirebaseAuth mAuth;
-    TextView goLogIn;
+    TextView goSignUp;
 
     @Override
     public void onStart() {
@@ -38,27 +36,24 @@ public class SignUp extends AppCompatActivity {
         }
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_log_in);
         mAuth = FirebaseAuth.getInstance();
         editTEmail = findViewById(R.id.email);
         editTPassword = findViewById(R.id.password);
-        buttonSignup = findViewById(R.id.button_signup);
-        goLogIn = findViewById(R.id.LoginNow);
+        buttonLogIn = findViewById(R.id.button_login);
+        goSignUp = findViewById(R.id.RegisterNow);
 
-        goLogIn.setOnClickListener(new View.OnClickListener() {
+        goSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                logic.openActivity(SignUp.this, LogIn.class);
-                finish();
+                logic.openActivity(LogIn.this, SignUp.class);
             }
         });
 
-        buttonSignup.setOnClickListener(new View.OnClickListener() {
+        buttonLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email,password;
@@ -66,42 +61,29 @@ public class SignUp extends AppCompatActivity {
                 password = String.valueOf(editTPassword.getText());
 
                 if(TextUtils.isEmpty(email)) {
-                    Toast.makeText(SignUp.this,"Enter email", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LogIn.this,"Enter email", Toast.LENGTH_LONG).show();
                     return;
                 }
 
                 if(TextUtils.isEmpty(password)) {
-                    Toast.makeText(SignUp.this,"Enter password", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LogIn.this,"Enter password", Toast.LENGTH_LONG).show();
                     return;
                 }
-
-
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(SignUp.this, "The authentication was successful",
-                                            Toast.LENGTH_SHORT).show();
-                                            mAuth.signInWithEmailAndPassword(email, password)
-                                                .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
-                                                    @Override
-                                                    public void onComplete(@NonNull Task<AuthResult> task) {
-                                                            logic.openActivity(getApplicationContext(),Welcoming.class);
-                                                            finish();
-                                                }
-                                            });
-
+                                    Toast.makeText(getApplicationContext(),"Login Successfull",Toast.LENGTH_SHORT).show();
+                                    logic.openActivity(getApplicationContext(),Homepage.class);
+                                    finish();
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(SignUp.this, "Authentication failed.",
+                                    Toast.makeText(LogIn.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
-
-
-
             }
         });
     }
