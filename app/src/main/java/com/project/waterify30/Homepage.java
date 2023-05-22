@@ -48,7 +48,13 @@ public class Homepage extends AppCompatActivity {
 
         });
 
-
+        buttonSocials = (ImageButton) findViewById(R.id.socials_button);
+        buttonSocials.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logic.openActivity(Homepage.this, FriendList.class);
+            }
+        });
 
 
 

@@ -13,6 +13,14 @@
         android:theme="@style/Theme.Waterify30"
         tools:targetApi="31">
         <activity
+            android:name=".FriendList"
+            android:exported="false" />
+        <activity
+            android:name=".Friends_List"
+            android:exported="false"
+            android:label="@string/title_activity_friends_list"
+            android:theme="@style/Theme.Waterify30" />
+        <activity
             android:name=".Notifications_Frequency"
             android:exported="false" />
         <activity
