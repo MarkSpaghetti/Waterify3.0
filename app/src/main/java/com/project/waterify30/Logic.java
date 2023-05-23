@@ -12,5 +12,8 @@ public class Logic {
         fromActivity.startActivity(intent);
     }
 
+    void setImage(Context fromActivity, Class activityToOpen){
+        Intent intent = new Intent();
+    }
 
 }
