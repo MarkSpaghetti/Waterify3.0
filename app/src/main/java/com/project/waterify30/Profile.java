@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+
 public class Profile extends AppCompatActivity {
 
     ImageView profilePicture;
@@ -19,6 +20,7 @@ public class Profile extends AppCompatActivity {
     FirebaseAuth auth;
     Button buttonSignout;
     TextView email;
+    TextView username;
     FirebaseUser user;
     private Logic logic = new Logic();
     @Override
@@ -28,6 +30,7 @@ public class Profile extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         buttonSignout = findViewById(R.id.button_logout);
         email = findViewById(R.id.email_shown);
+        username = findViewById(R.id.username_shown);
         user = auth.getCurrentUser();
         if (user == null){
             logic.openActivity(getApplicationContext(),LogIn.class);
@@ -35,7 +38,11 @@ public class Profile extends AppCompatActivity {
         }
         else {
             email.setText(user.getEmail());
+            username.setText(getUsername());
         }
+
+
+
 
         buttonSignout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,5 +61,16 @@ public class Profile extends AppCompatActivity {
                 logic.openActivity(Profile.this, Homepage.class);
             }
         });
+    }
+    private String getUsername(){
+        String email = user.getEmail();
+        String username = "";
+        for (char a : email.toCharArray()) {
+            if (a!='@'){
+                username += a;
+            }
+            else return username;
+        }
+        return username;
     }
 }
