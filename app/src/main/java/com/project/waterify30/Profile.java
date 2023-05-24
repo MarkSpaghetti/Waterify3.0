@@ -18,7 +18,7 @@ public class Profile extends AppCompatActivity {
     private FirebaseUser user;
     private ImageButton buttonClose, buttonSettings;
     private Button buttonSignout;
-    private TextView email;
+    private TextView email,username;
     private static final int IMAGE_PICK_CODE = 1000;
     private static final int PERMISSION_CODE = 1001;
 
@@ -31,6 +31,7 @@ public class Profile extends AppCompatActivity {
         email = findViewById(R.id.email_shown);
         buttonClose = (ImageButton)findViewById(R.id.button6);
         buttonSettings = findViewById(R.id.settingsButton);
+        username = findViewById(R.id.username_shown);
         user = auth.getCurrentUser();
 
         displayUserData();
@@ -62,12 +63,27 @@ public class Profile extends AppCompatActivity {
         });
     }
 
+        private String ignoreEmail(){
+            String email = user.getEmail();
+            String username = "";
+            for (char a:email.toCharArray() ) {
+                if (a!='@'){
+                    username += a;
+                }
+                else return username;
+            }
+            return username;
+        }
+
         private void displayUserData(){
             if (user == null){
                 logic.openActivity(getApplicationContext(),LogIn.class);
                 finish();
             }
-            else email.setText(user.getEmail());
+            else {
+                    email.setText(user.getEmail());
+                    username.setText(ignoreEmail());
+            }
 
 
         }
