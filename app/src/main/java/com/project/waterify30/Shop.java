@@ -2,13 +2,14 @@ package com.project.waterify30;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
 public class Shop extends AppCompatActivity {
 
-    private ImageButton buttonHome, plant1;
+    private ImageButton buttonHome;
     private Logic logic = new Logic();
     @Override
     protected void onCreate(Bundle savedInstanceState) {

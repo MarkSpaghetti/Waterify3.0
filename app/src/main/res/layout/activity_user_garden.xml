@@ -50,29 +50,31 @@
 
     <ImageView
         android:id="@+id/ImageView1"
-        android:layout_width="327dp"
-        android:layout_height="505dp"
+        android:layout_width="330dp"
+        android:layout_height="522dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/green_background"
         app:layout_constraintBottom_toTopOf="@+id/home_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.888" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/ImageView2"
         android:layout_width="300dp"
         android:layout_height="15dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="16dp"
         android:background="@color/grey"
         app:layout_constraintEnd_toEndOf="@+id/ImageView1"
         app:layout_constraintTop_toTopOf="@+id/ImageView1" />
 
     <ImageView
+        android:id="@+id/imageView11"
         android:layout_width="300dp"
         android:layout_height="15dp"
         android:background="@color/grey"
@@ -104,5 +106,4 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
