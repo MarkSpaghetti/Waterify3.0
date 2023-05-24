@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class Homepage extends AppCompatActivity {
-    private ImageButton buttonProfile, buttonStatistics, buttonSocials, buttonStore, buttonQuiz, buttonGarden;
+    private ImageButton buttonProfile, buttonStatistics, buttonSocials, buttonStore, buttonQuiz, buttonGarden, buttonDrops;
 
     int droplets;
     int experience;
@@ -55,7 +55,14 @@ public class Homepage extends AppCompatActivity {
             }
         });
 
+        buttonDrops = (ImageButton)findViewById(R.id.button_drops);
+        buttonDrops.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
 
+                logic.openActivity(Homepage.this, Cups.class);
+            }
+        });
 
     }
 }
