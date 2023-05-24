@@ -6,8 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.renderscript.Matrix3f;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -115,8 +122,31 @@ public class Profile extends AppCompatActivity {
         if (resultCode == RESULT_OK && requestCode == IMAGE_PICK_CODE) {
             profilePicture.setImageURI(data.getData());
             profilePicture.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
+            // Apply circular shape transformation
+            BitmapDrawable drawable = (BitmapDrawable) profilePicture.getDrawable();
+            Bitmap bitmap = drawable.getBitmap();
+            Bitmap circularBitmap = getRoundedBitmap(bitmap);
+            profilePicture.setImageBitmap(circularBitmap);
         }
     }
+
+    private Bitmap getRoundedBitmap(Bitmap bitmap) {
+        int width = bitmap.getWidth();
+        int height = bitmap.getHeight();
+        int radius = Math.min(width, height) / 2;
+
+        Bitmap circularBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(circularBitmap);
+        Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        canvas.drawCircle(width / 2f, height / 2f, radius, paint);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        canvas.drawBitmap(bitmap, 0, 0, paint);
+
+        return circularBitmap;
+    }
+
 
     private String ignoreEmail(){
             String email = user.getEmail();
