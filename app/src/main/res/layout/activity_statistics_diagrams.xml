@@ -6,4 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".Statistics_Diagrams">
 
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/DailyBarChart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

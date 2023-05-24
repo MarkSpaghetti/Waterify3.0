@@ -9,6 +9,10 @@
     <color name="yellow">#FAB301</color>
     <color name="orange">#FD9800</color>
     <color name="dark_green">#85BDA6</color>
+    <color name="dark_red">#D64F15</color>
+    <color name="diagram_blue">#00BEA7</color>
+    <color name="diagram_dark_blue">#008174</color>
+
 
 
 </resources>

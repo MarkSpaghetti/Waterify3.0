@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Profile extends AppCompatActivity {
 
-    private ImageButton buttonClose;
+    private ImageButton buttonClose, buttonSettings;
     FirebaseAuth auth;
     Button buttonSignout;
     TextView email;
@@ -50,6 +50,15 @@ public class Profile extends AppCompatActivity {
             public void onClick(View v) {
 
                 logic.openActivity(Profile.this, Homepage.class);
+            }
+        });
+
+        buttonSettings = findViewById(R.id.settingsButton);
+        buttonSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logic.openActivity(Profile.this, Settings.class);
+
             }
         });
     }

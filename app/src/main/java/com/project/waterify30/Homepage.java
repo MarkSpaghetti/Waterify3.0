@@ -14,12 +14,10 @@ public class Homepage extends AppCompatActivity {
     int experience;
     private Logic logic = new Logic();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
-
 
         buttonProfile = (ImageButton)findViewById(R.id.button_profile);
         buttonProfile.setOnClickListener(new View.OnClickListener(){
@@ -48,7 +46,14 @@ public class Homepage extends AppCompatActivity {
 
         });
 
+        buttonStatistics = findViewById(R.id.statistics_button);
+        buttonStatistics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logic.openActivity(Homepage.this, Statistics.class);
 
+            }
+        });
 
 
 

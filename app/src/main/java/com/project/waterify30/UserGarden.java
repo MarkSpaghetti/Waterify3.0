@@ -11,7 +11,7 @@ import android.widget.ImageView;
 public class UserGarden extends AppCompatActivity {
 
     private ImageButton buttonHome;
-    private ImageView plant1;
+    private ImageView plant1, plant2, plant3, plant4, plant5, plant6, plant7, plant8, plant9, plant10;
     private Logic logic = new Logic();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +26,5 @@ public class UserGarden extends AppCompatActivity {
                 logic.openActivity(UserGarden.this, Homepage.class);
             }
         });
-
-        plant1 = findViewById(R.id.plant1);
-        Intent intent = getIntent();
-        int inputImage = intent.getIntExtra(Shop.KEY1, 1);
-        plant1.setImageResource(inputImage);
     }
 }
