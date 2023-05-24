@@ -52,16 +52,11 @@
         android:id="@+id/ImageView1"
         android:layout_width="330dp"
         android:layout_height="522dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginBottom="96dp"
         android:background="@drawable/green_background"
-        app:layout_constraintBottom_toTopOf="@+id/home_button"
+        app:layout_constraintBottom_toBottomOf="@+id/home_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/ImageView2"
@@ -94,16 +89,333 @@
         app:layout_constraintStart_toStartOf="@+id/ImageView1"
         app:layout_constraintTop_toTopOf="@+id/ImageView1" />
 
+
     <ImageButton
         android:id="@+id/button_profile"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/hp_profile_background"
         android:src="@drawable/hp_person_outline_24dp"
 
+        app:layout_constraintBottom_toTopOf="@+id/ImageView1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="287dp"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/ImageView2"
+        app:layout_constraintEnd_toEndOf="@+id/ImageView1"
+        app:layout_constraintStart_toStartOf="@+id/ImageView1">
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalscrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <ImageButton
+                    android:id="@+id/plant1"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant2"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant3"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant4"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant5"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant6"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant7"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant8"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant9"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant10"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="287dp"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/ImageView1"
+        app:layout_constraintStart_toStartOf="@+id/ImageView1">
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalscrollView2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <ImageButton
+                    android:id="@+id/plant11"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant12"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant13"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant14"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant15"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant16"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant17"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant18"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant19"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant20"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="287dp"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/ImageView4"
+        app:layout_constraintEnd_toEndOf="@+id/ImageView1"
+        app:layout_constraintStart_toStartOf="@+id/ImageView1">
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalscrollView3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <ImageButton
+                    android:id="@+id/plant21"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant22"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant23"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant24"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant25"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant26"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant27"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant28"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant29"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/plant30"
+                    android:layout_width="125dp"
+                    android:layout_height="fill_parent"
+                    android:backgroundTint="@color/dark_green"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/empty"></ImageButton>
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 public class Shop extends AppCompatActivity {
 
-    private ImageButton buttonHome;
+    private ImageButton buttonHome, plant1;
     private Logic logic = new Logic();
 
     public static final String KEY1 = "photo";
