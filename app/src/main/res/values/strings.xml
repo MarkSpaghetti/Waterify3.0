@@ -8,4 +8,14 @@
     <string name="tap_to_login">Tap to login</string>
     <string name="create_an_account">Create an account?</string>
     <string name="log_out">Log out</string>
+    <string name="desc_statistics_button">Statistics</string>
+    <string name="desc_home_button">Homepage</string>
+    <string name="desc_socials_button">Socials</string>
+    <string name="desc_profile_button">Profile</string>
+    <string name="desc_garden_button">Your Garden</string>
+    <string name="desc_frame_for_navigation_buttons">Navigation buttons</string>
+    <string name="desc_drops_button">Drops</string>
+    <string name="desc_stars_button">Stars</string>
+    <string name="desc_quizzes_button">Quizzes</string>
+    <string name="desc_shop_button">Shop</string>
 </resources>

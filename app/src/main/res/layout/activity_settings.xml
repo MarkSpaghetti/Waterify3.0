@@ -85,28 +85,18 @@
             android:layout_height="wrap_content"
             android:layout_margin="30dp" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <Spinner
+            android:id="@+id/sport_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/sport_freq"
-            android:hint="Sport frequency"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/sport_freq_enter"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_margin="30dp"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="Choose mood"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/round_edges"
             android:backgroundTint="@color/yellow"
             android:padding="10dp"/>
