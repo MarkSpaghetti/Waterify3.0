@@ -1,6 +1,8 @@
 package com.project.waterify30;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,21 +12,24 @@ import android.widget.TextView;
 
 public class Statistics extends AppCompatActivity {
 
-    private int progress = 0;
-    private int update = 0;
+    int progress;
+    private int update;
     private int daily_goal = 1500;
     ProgressBar progressBar;
     TextView textView;
     private ImageButton buttonHome;
-    private int fiftyML = 0;
-    private int hundredML = 0;
-    private int hundredFiftyML = 0;
-    private int twoHundredML = 0;
+    private int fiftyML;
+    private int hundredML;
+    private int hundredFiftyML;
+    private int twoHundredML;
     private Logic logic = new Logic();
+    //private SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
+
+        //sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
 
         buttonHome = (ImageButton) findViewById(R.id.home_button);
         buttonHome.setOnClickListener(new View.OnClickListener() {
@@ -48,11 +53,8 @@ public class Statistics extends AppCompatActivity {
         progressBar.setProgress(progress);
         textView.setText(String.valueOf(progress));
 
-        update = 0;
-        fiftyML = 0;
-        hundredML = 0;
-        hundredFiftyML = 0;
-        twoHundredML = 0;
-
+        //SharedPreferences.Editor editor = sharedPreferences.edit();
+        //editor.putInt("progress", progress);
+        //editor.apply();
     }
 }
