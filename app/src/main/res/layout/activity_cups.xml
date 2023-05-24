@@ -43,9 +43,9 @@
         android:background="@drawable/round_edges"
         android:backgroundTint="@color/light_grey"
         android:padding="20dp"
-        android:drawableRight="@drawable/small_cup"
+        android:drawableEnd="@drawable/small_cup"
         android:text="50 ml"
-        android:gravity="left"/>
+        android:gravity="start"/>
 
     <Button
         android:id="@+id/hundred_ml"
