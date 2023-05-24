@@ -23,13 +23,14 @@ public class Statistics extends AppCompatActivity {
     private int hundredFiftyML;
     private int twoHundredML;
     private Logic logic = new Logic();
-    //private SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
 
-        //sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("MyPrefs", 0);
+        int new_progress = sharedPreferences.getInt("progress", 0);
 
         buttonHome = (ImageButton) findViewById(R.id.home_button);
         buttonHome.setOnClickListener(new View.OnClickListener() {
@@ -49,12 +50,13 @@ public class Statistics extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.text_view_progress);
 
         update = fiftyML+hundredML+hundredFiftyML+twoHundredML;
-        progress = ((int) progress + (update*100/daily_goal));
+        progress = ((int) new_progress + (update*100/daily_goal));
         progressBar.setProgress(progress);
         textView.setText(String.valueOf(progress));
 
-        //SharedPreferences.Editor editor = sharedPreferences.edit();
-        //editor.putInt("progress", progress);
-        //editor.apply();
+        SharedPreferences sharedPreferences2 = getApplicationContext().getSharedPreferences("MyPrefs", 0);
+        SharedPreferences.Editor editor = sharedPreferences2.edit();
+        editor.putInt("progress", progress);
+        editor.apply();
     }
 }
