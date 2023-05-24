@@ -13,12 +13,15 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Profile extends AppCompatActivity {
 
-    private ImageButton buttonClose, buttonSettings;
-    FirebaseAuth auth;
-    Button buttonSignout;
-    TextView email;
-    FirebaseUser user;
     private Logic logic = new Logic();
+    private FirebaseAuth auth;
+    private FirebaseUser user;
+    private ImageButton buttonClose, buttonSettings;
+    private Button buttonSignout;
+    private TextView email;
+    private static final int IMAGE_PICK_CODE = 1000;
+    private static final int PERMISSION_CODE = 1001;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,25 +29,22 @@ public class Profile extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         buttonSignout = findViewById(R.id.button_logout);
         email = findViewById(R.id.email_shown);
+        buttonClose = (ImageButton)findViewById(R.id.button6);
+        buttonSettings = findViewById(R.id.settingsButton);
         user = auth.getCurrentUser();
-        if (user == null){
-            logic.openActivity(getApplicationContext(),LogIn.class);
-            finish();
-        }
-        else {
-            email.setText(user.getEmail());
-        }
+
+        displayUserData();
+
+
 
         buttonSignout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 logic.openActivity(getApplicationContext(),LogIn.class);
-
             }
         });
 
-        buttonClose = (ImageButton)findViewById(R.id.button6);
         buttonClose.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -53,7 +53,6 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-        buttonSettings = findViewById(R.id.settingsButton);
         buttonSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,4 +61,14 @@ public class Profile extends AppCompatActivity {
             }
         });
     }
+
+        private void displayUserData(){
+            if (user == null){
+                logic.openActivity(getApplicationContext(),LogIn.class);
+                finish();
+            }
+            else email.setText(user.getEmail());
+
+
+        }
 }
