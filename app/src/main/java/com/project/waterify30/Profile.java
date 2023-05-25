@@ -101,9 +101,7 @@ public class Profile extends AppCompatActivity {
                 BitmapDrawable drawable = (BitmapDrawable) profilePicture.getDrawable();
                 Bitmap updatedBitmap = drawable.getBitmap();
 
-                Intent intent = new Intent(Profile.this, Homepage.class);
-                intent.putExtra("profilePictureBitmap", updatedBitmap);
-                startActivity(intent);
+                logic.openActivity(Profile.this, Homepage.class);
 
             }
         });
@@ -147,7 +145,7 @@ public class Profile extends AppCompatActivity {
             // Save the original bitmap instead of the circular bitmap
             BitmapDrawable drawable = (BitmapDrawable) profilePicture.getDrawable();
             originalBitmap = drawable.getBitmap();
-            Bitmap circularBitmap = getRoundedBitmap(originalBitmap);
+            Bitmap circularBitmap = logic.getRoundedBitmap(originalBitmap);
             profilePicture.setImageBitmap(circularBitmap);
             saveImageToFile(originalBitmap); // Save the original bitmap
         }
@@ -179,34 +177,9 @@ public class Profile extends AppCompatActivity {
 
 
 
-    private Bitmap getRoundedBitmap(Bitmap bitmap) {
-        int width = bitmap.getWidth();
-        int height = bitmap.getHeight();
-        int radius = Math.min(width, height) / 2;
-
-        Bitmap circularBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(circularBitmap);
-        Paint paint = new Paint();
-        paint.setAntiAlias(true);
-        canvas.drawCircle(width / 2f, height / 2f, radius, paint);
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        canvas.drawBitmap(bitmap, 0, 0, paint);
-
-        return circularBitmap;
-    }
 
 
-    private String ignoreEmail(){
-            String email = user.getEmail();
-            String username = "";
-            for (char a:email.toCharArray() ) {
-                if (a!='@'){
-                    username += a;
-                }
-                else return username;
-            }
-            return username;
-        }
+
 
         private void displayUserData(){
             if (user == null){
@@ -215,33 +188,21 @@ public class Profile extends AppCompatActivity {
             }
             else {
                     email.setText(user.getEmail());
-                    username.setText(ignoreEmail());
+                    username.setText(logic.ignoreEmail(user));
             }
 
 
         }
 
-    private void updateProfilePicture(Bitmap bitmap) {
-        // Update the profile picture in the Profile activity
 
-        // Call the listener to notify the other activity
-        if (getIntent().hasExtra("profilePictureListener")) {
-            ProfilePictureUpdateListener listener = getIntent().getParcelableExtra("profilePictureListener");
-            if (listener != null) {
-                listener.onProfilePictureUpdated(bitmap);
-            }
-        }
-    }
-
-
-    private void loadImageIfThere() {
+    public void loadImageIfThere() {
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         imagePath = sharedPreferences.getString("imagePath", null);
         if (imagePath != null) {
             File file = new File(imagePath);
             if (file.exists()) {
                 originalBitmap = BitmapFactory.decodeFile(imagePath); // Load the original bitmap
-                Bitmap circularBitmap = getRoundedBitmap(originalBitmap);
+                Bitmap circularBitmap = logic.getRoundedBitmap(originalBitmap);
                 profilePicture.setImageBitmap(circularBitmap);
             }
         }
