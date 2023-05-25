@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Statistics extends AppCompatActivity {
 
@@ -17,7 +18,7 @@ public class Statistics extends AppCompatActivity {
     private int daily_goal = 1500;
     ProgressBar progressBar;
     TextView textView;
-    private ImageButton buttonHome;
+    private ImageButton buttonHome, buttonDiagrams;
     private int fiftyML;
     private int hundredML;
     private int hundredFiftyML;
@@ -38,6 +39,14 @@ public class Statistics extends AppCompatActivity {
             public void onClick(View v) {
 
                 logic.openActivity(Statistics.this, Homepage.class);
+            }
+        });
+
+        buttonDiagrams = (ImageButton) findViewById(R.id.statistics_diagram_button);
+        buttonDiagrams.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logic.openActivity(Statistics.this, Statistics_Diagrams.class);
             }
         });
 
