@@ -129,15 +129,15 @@
         android:id="@+id/button_notify_friendNr1"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@drawable/round_edges"
+        android:background="@drawable/circle"
         android:backgroundTint="@color/yellow"
         android:src="@drawable/baseline_notifications_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageViewFriendNr1"
-        app:layout_constraintHorizontal_bias="0.895"
+        app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintStart_toStartOf="@+id/imageViewFriendNr1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.365" />
+        app:layout_constraintVertical_bias="0.364" />
 
     <ImageButton
         android:id="@+id/button_notify_search"
