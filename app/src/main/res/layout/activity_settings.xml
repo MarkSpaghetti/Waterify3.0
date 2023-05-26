@@ -26,8 +26,13 @@
     </Toolbar>
 
     <include
-        android:id="@+id/close_button"
-        layout="@layout/header_close_button" />
+        android:id="@+id/settings_close_button"
+        layout="@layout/header_close_button"
+        android:layout_width="413dp"
+        android:layout_height="74dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"

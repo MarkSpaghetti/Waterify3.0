@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -16,11 +17,23 @@ public class Settings extends AppCompatActivity implements AdapterView.OnItemSel
     String[] sportItems = {"Select sport frequency", "sport1", "sport2", "sport3", "sport4"};
     AutoCompleteTextView healthConEnter;
     ArrayAdapter<String> adapterHealthItems;
+    ImageButton closebutton;
+
+    Logic logic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+        closebutton = findViewById(R.id.settings_close_button);
+
+        closebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logic.openActivity(Settings.this,Homepage.class);
+            }
+        });
 
         // health problems spinner definition
         Spinner spinner1 = (Spinner) findViewById(R.id.health_spinner);
