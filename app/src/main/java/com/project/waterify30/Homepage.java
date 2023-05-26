@@ -52,7 +52,7 @@ public class Homepage extends AppCompatActivity {
         buttonSocials.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                logic.openActivity(Homepage.this, FriendList.class);
+                logic.openActivity(Homepage.this, FriendListConnected.class);
             }
         });
 

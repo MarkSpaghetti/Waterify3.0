@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,49 +15,61 @@
         android:theme="@style/Theme.Waterify30"
         tools:targetApi="31">
         <activity
-            android:name=".FriendList"
+            android:name=".FriendRequest"
             android:exported="false" />
         <activity
-            android:name=".Friends_List"
+            android:name=".FriendListConnected"
+            android:exported="false" />
+        <activity
+            android:name=".FriendList"
             android:exported="false"
             android:label="@string/title_activity_friends_list"
             android:theme="@style/Theme.Waterify30" />
+        <activity
+            android:name=".LogIn"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Notifications_Frequency"
             android:exported="false" />
         <activity
             android:name=".FriendGarden"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".UserGarden"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Cups"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Settings"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Statistics_Diagrams"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Statistics"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Shop"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".SignUp"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Welcoming"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Profile"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Homepage"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
