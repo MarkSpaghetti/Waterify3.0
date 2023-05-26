@@ -58,6 +58,14 @@ public class Homepage extends AppCompatActivity {
 
         });
 
+        buttonSocials = (ImageButton) findViewById(R.id.socials_button);
+        buttonSocials.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logic.openActivity(Homepage.this, FriendList.class);
+            }
+        });
+
         buttonStatistics = findViewById(R.id.statistics_button);
         buttonStatistics.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,10 +83,6 @@ public class Homepage extends AppCompatActivity {
                 logic.openActivity(Homepage.this, Cups.class);
             }
         });
-
-
-
-
     }
 
 
