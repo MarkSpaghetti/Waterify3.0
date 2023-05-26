@@ -11,9 +11,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
+
     private ImageButton button;
     Logic logic;
     FirebaseUser mAuth;
+   public static String imagePath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
