@@ -17,7 +17,7 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.279"></ImageView>
+        app:layout_constraintVertical_bias="0.279"/>
 
     <ImageButton
         android:id="@+id/button_profile_friendNr1"
@@ -31,7 +31,7 @@
         app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFriendNr1"
-        app:layout_constraintVertical_bias="0.48"></ImageButton>
+        app:layout_constraintVertical_bias="0.48"/>
 
     <ImageButton
         android:id="@+id/button_accept"
@@ -45,7 +45,7 @@
         app:layout_constraintHorizontal_bias="0.765"
         app:layout_constraintStart_toStartOf="@+id/imageViewFriendNr1"
         app:layout_constraintTop_toTopOf="@+id/imageViewFriendNr1"
-        app:layout_constraintVertical_bias="0.499"></ImageButton>
+        app:layout_constraintVertical_bias="0.499"/>
 
     <ImageButton
         android:id="@+id/button_reject"
@@ -59,7 +59,7 @@
         app:layout_constraintHorizontal_bias="0.933"
         app:layout_constraintStart_toStartOf="@+id/imageViewFriendNr1"
         app:layout_constraintTop_toTopOf="@+id/imageViewFriendNr1"
-        app:layout_constraintVertical_bias="0.499"></ImageButton>
+        app:layout_constraintVertical_bias="0.499"/>
 
     <TextView
         android:id="@+id/nametext"

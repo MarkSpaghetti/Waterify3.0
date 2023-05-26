@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-<<<<<<< HEAD
-
     <uses-permission android:name="android.permission.INTERNET" />
-
-=======
-    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
->>>>>>> 3a34338fc22fe7e50a7c72afb7ca1f6e87611d1d
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
