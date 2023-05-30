@@ -12,16 +12,16 @@ import android.widget.TextView;
 
 public class Statistics extends AppCompatActivity {
 
-    int progress;
-    private int update;
+    int progress=0;
+    private int update=0;
     private int daily_goal = 1500;
     ProgressBar progressBar;
     TextView textView;
     private ImageButton buttonHome;
-    private int fiftyML;
-    private int hundredML;
-    private int hundredFiftyML;
-    private int twoHundredML;
+    private int fiftyML=0;
+    private int hundredML=0;
+    private int hundredFiftyML=0;
+    private int twoHundredML=0;
     private Logic logic = new Logic();
 
     @Override
