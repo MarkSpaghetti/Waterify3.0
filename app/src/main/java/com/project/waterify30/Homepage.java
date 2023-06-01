@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class Homepage extends AppCompatActivity implements ProfilePictureUpdateListener {
+public class Homepage extends AppCompatActivity  {
     private ImageButton buttonProfile, buttonStatistics, buttonSocials, buttonStore, buttonQuiz, buttonGarden, buttonDrops;
 
     private ImageView profilePicture;
@@ -70,8 +70,11 @@ public class Homepage extends AppCompatActivity implements ProfilePictureUpdateL
 
     }
 
+    /*
     @Override
     public void onProfilePictureUpdated(Bitmap profilePicture) {
         this.profilePicture.setImageBitmap(profilePicture);
     }
+
+     */
 }
