@@ -227,8 +227,8 @@
 
                 <ImageButton
                     android:id="@+id/plant11"
-                    android:layout_width="125dp"
-                    android:layout_height="fill_parent"
+                    android:layout_width="120dp"
+                    android:layout_height="160dp"
                     android:backgroundTint="@color/dark_green"
                     android:scaleType="fitCenter"
                     android:src="@drawable/plant_11"></ImageButton>
