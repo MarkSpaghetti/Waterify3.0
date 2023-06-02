@@ -13,6 +13,7 @@ public class Cups extends AppCompatActivity {
 
     private Button fiftyML, hundredML, hundredFiftyML, twoHundredML;
     private Logic logic = new Logic();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,11 +23,10 @@ public class Cups extends AppCompatActivity {
         fiftyML.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i1 = new Intent(Cups.this, Statistics.class);
-                i1.putExtra("fifty_ml", 50);
-                startActivity(i1);
-
-                //TODO how to make toast to show up?
+                MainActivity.cup = 50;
+                //Intent i1 = new Intent(Cups.this, Statistics.class);
+                //i1.putExtra("fifty_ml", true);
+                //startActivity(i1);
                 Toast.makeText(getApplicationContext(),"Hurray, you drunk 50ml of water!", Toast.LENGTH_LONG).show();
 
                 logic.openActivity(Cups.this,Homepage.class);
@@ -38,9 +38,8 @@ public class Cups extends AppCompatActivity {
         hundredML.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i2 = new Intent(Cups.this, Statistics.class);
-                i2.putExtra("hundred_ml", 100);
-                startActivity(i2);
+                MainActivity.cup = 100;
+                Toast.makeText(getApplicationContext(),"Hurray, you drunk 100ml of water!", Toast.LENGTH_LONG).show();
 
                 logic.openActivity(Cups.this,Homepage.class);
             }
@@ -50,10 +49,7 @@ public class Cups extends AppCompatActivity {
         hundredFiftyML.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i3 = new Intent(Cups.this, Statistics.class);
-                i3.putExtra("hundred_fifty_ml", 150);
-                startActivity(i3);
-
+                MainActivity.cup = 150;
                 logic.openActivity(Cups.this,Homepage.class);
             }
         });
@@ -62,9 +58,8 @@ public class Cups extends AppCompatActivity {
         twoHundredML.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i4 = new Intent(Cups.this, Statistics.class);
-                i4.putExtra("two_hundred_ml", 200);
-                startActivity(i4);
+                MainActivity.cup = 200;
+                Toast.makeText(getApplicationContext(),"Hurray, you drunk 200ml of water!", Toast.LENGTH_LONG).show();
 
                 logic.openActivity(Cups.this,Homepage.class);
             }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -19,19 +20,12 @@ public class Statistics extends AppCompatActivity {
     ProgressBar progressBar;
     TextView textView;
     private ImageButton buttonHome, buttonDiagrams;
-    private int fiftyML;
-    private int hundredML;
-    private int hundredFiftyML;
-    private int twoHundredML;
     private Logic logic = new Logic();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
-
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("MyPrefs", 0);
-        int new_progress = sharedPreferences.getInt("progress", 0);
 
         buttonHome = (ImageButton) findViewById(R.id.home_button);
         buttonHome.setOnClickListener(new View.OnClickListener() {
@@ -50,22 +44,12 @@ public class Statistics extends AppCompatActivity {
             }
         });
 
-        fiftyML = getIntent().getExtras().getInt("fifty_ml");
-        hundredML = getIntent().getExtras().getInt("hundred_ml");
-        hundredFiftyML = getIntent().getExtras().getInt("hundred_fifty_ml");
-        twoHundredML = getIntent().getExtras().getInt("two_hundred_ml");
-
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
         textView = (TextView) findViewById(R.id.text_view_progress);
 
-        update = fiftyML+hundredML+hundredFiftyML+twoHundredML;
-        progress = ((int) new_progress + (update*100/daily_goal));
-        progressBar.setProgress(progress);
-        textView.setText(String.valueOf(progress));
-
-        SharedPreferences sharedPreferences2 = getApplicationContext().getSharedPreferences("MyPrefs", 0);
-        SharedPreferences.Editor editor = sharedPreferences2.edit();
-        editor.putInt("progress", progress);
-        editor.apply();
+        update = MainActivity.cup;
+        MainActivity.daily_progress += (int) (update*100/daily_goal);
+        progressBar.setProgress(MainActivity.daily_progress);
+        textView.setText(String.valueOf(MainActivity.daily_progress));
     }
 }
