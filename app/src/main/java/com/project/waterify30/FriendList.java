@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 
 public class FriendList extends AppCompatActivity {
 
-    private ImageButton buttonHome, buttonSocials, buttonStatistics, buttonFriendGarden; // list of buttons
+    private ImageButton buttonHome, buttonSocials, buttonStatistics, buttonFriendGarden,buttonRequest; // list of buttons
     private Logic logic = new Logic();
 
     @Override
@@ -53,6 +53,17 @@ public class FriendList extends AppCompatActivity {
             }
 
         });
+
+        buttonRequest = (ImageButton) findViewById(R.id.request_button);
+        buttonRequest.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                logic.openActivity(FriendList.this, FriendRequest.class);
+            }
+
+        });
+
     }
 
 }
