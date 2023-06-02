@@ -1,21 +1,32 @@
 package com.project.waterify30;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static androidx.core.content.ContextCompat.getSystemService;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class Homepage extends AppCompatActivity  {
     private ImageButton buttonProfile, buttonStatistics, buttonSocials, buttonStore, buttonQuiz, buttonGarden, buttonDrops;
 
     private ImageView profilePicture;
-    int droplets;
-    int experience;
+    int droplets = 0;
+    int level = 0;
     private Logic logic = new Logic();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +80,35 @@ public class Homepage extends AppCompatActivity  {
         });
 
     }
+
+    public void buttonPopUpWindow( View view ) {
+        LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        View viewPopupwindow = set();
+        final PopupWindow popupWindow = new PopupWindow ( viewPopupwindow, 900, 900, true);
+        popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
+        logic.openActivity(Homepage.this, Homepage.class);
+    }
+
+    public View set(){
+        PopUpWindow_coins pop = new PopUpWindow_coins();
+        setContentView(R.layout.activity_homepage);
+        ConstraintLayout mainLayout = (ConstraintLayout) findViewById(R.id.pop_up_window_coins);
+
+        // inflate (create) another copy of our custom layout
+        LayoutInflater inflater = getLayoutInflater();
+        View myLayout = inflater.inflate(R.layout.activity_pop_up_window_coins, mainLayout, false);
+
+        // make changes to our custom layout and its subviews
+        TextView txtLevel = (TextView) myLayout.findViewById(R.id.textView_level);
+        txtLevel.setText("level " + Integer.toString(pop.getLevel()));
+        TextView txt_droplets = myLayout.findViewById(R.id.textView_droplets);
+        txt_droplets.setText(Integer.toString(pop.getDroplets()) + " droplets");
+
+        return myLayout;
+    }
+
+
+
 
     /*
     @Override

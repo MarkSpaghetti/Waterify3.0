@@ -1,6 +1,9 @@
 package com.project.waterify30;
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 import static android.content.Context.MODE_PRIVATE;
 
+
+import static androidx.core.content.ContextCompat.getSystemService;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,8 +14,12 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.view.LayoutInflater;
 
 import com.google.firebase.auth.FirebaseUser;
 
@@ -64,4 +71,5 @@ public class Logic {
 
         return circularBitmap;
     }
+
 }

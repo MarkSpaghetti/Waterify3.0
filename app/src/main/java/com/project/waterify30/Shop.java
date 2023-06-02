@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class Shop extends AppCompatActivity {
 
@@ -18,6 +19,8 @@ public class Shop extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
+
+        PopUpWindow_coins pop = new PopUpWindow_coins();
 
         buttonHome = (ImageButton) findViewById(R.id.home_button);
         buttonHome.setOnClickListener(new View.OnClickListener() {
@@ -87,15 +90,22 @@ public class Shop extends AppCompatActivity {
         plant2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Save the new image resource identifier to SharedPreferences
-                SharedPreferences preferences2 = getApplicationContext().getSharedPreferences("prefs2", 0);
-                SharedPreferences.Editor editor2 = preferences2.edit();
-                editor2.putInt("resource2", R.drawable.plant_2);
-                editor2.apply();
+                if (pop.getDroplets() >= 30) {
+                    // Save the new image resource identifier to SharedPreferences
+                    SharedPreferences preferences2 = getApplicationContext().getSharedPreferences("prefs2", 0);
+                    SharedPreferences.Editor editor2 = preferences2.edit();
+                    editor2.putInt("resource2", R.drawable.plant_2);
+                    editor2.apply();
 
-                // Start ActivityB
-                Intent intent = new Intent(Shop.this, UserGarden.class);
-                startActivity(intent);
+                    // Start ActivityB
+                    Intent intent = new Intent(Shop.this, UserGarden.class);
+                    startActivity(intent);
+
+                    //update droplets
+                    pop.updateDroplets(30);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Sorry you don't have enough droplets to buy this item", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
