@@ -17,7 +17,11 @@ public class MainActivity extends AppCompatActivity {
     FirebaseUser mAuth;
    public static String imagePath;
    public static int cup;
-   public static int daily_progress = 0;
+   public static int daily_progress;
+
+   public static int[] week = {2,6,3,4,5,8,4};
+   //public static int day = 0;
+   //public static String prevDate;
 
 
     @Override

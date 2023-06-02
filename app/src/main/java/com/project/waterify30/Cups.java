@@ -24,9 +24,6 @@ public class Cups extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 MainActivity.cup = 50;
-                //Intent i1 = new Intent(Cups.this, Statistics.class);
-                //i1.putExtra("fifty_ml", true);
-                //startActivity(i1);
                 Toast.makeText(getApplicationContext(),"Hurray, you drunk 50ml of water!", Toast.LENGTH_LONG).show();
 
                 logic.openActivity(Cups.this,Homepage.class);
