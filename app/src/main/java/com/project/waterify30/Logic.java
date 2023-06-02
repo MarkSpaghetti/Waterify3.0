@@ -1,6 +1,6 @@
 package com.project.waterify30;
-
 import static android.content.Context.MODE_PRIVATE;
+
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,6 +18,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.io.File;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+
 public class Logic {
 
     public void openActivity(Context fromActivity ,Class activityToOpen){
@@ -26,10 +29,13 @@ public class Logic {
         fromActivity.startActivity(intent);
     }
 
+//    private val dbfriends = FirebaseDatabase.getInstance().getReference();
+//    private val _result = MutableLiveData<Exception?>()
+//    val result: LiveData<Exception?> get() = _result
+
     public void setImage(Context fromActivity, Class activityToOpen){
         Intent intent = new Intent();
     }
-
 
     public String ignoreEmail(FirebaseUser user){
         String email = user.getEmail();
@@ -58,6 +64,4 @@ public class Logic {
 
         return circularBitmap;
     }
-
-
 }

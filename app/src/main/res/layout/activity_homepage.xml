@@ -8,7 +8,8 @@
     android:paddingRight="10dp"
     android:paddingBottom="20dp"
     android:paddingTop="20dp"
-    android:background="@color/light_green">
+    android:background="@color/light_green"
+    android:id="@+id/parent_layout">
 
     <ImageButton
         android:id="@+id/statistics_button"
@@ -63,23 +64,24 @@
 
         />
 
+
     <ImageButton
         android:id="@+id/to_garden_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="380dp"
         android:background="@drawable/green_background"
-        android:src="@drawable/plant_10"
-        android:scaleType="fitCenter"
-        android:paddingTop="80dp"
-        android:paddingBottom="80dp"
-        android:paddingRight="30dp"
         android:paddingLeft="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/home_button"
+        android:paddingTop="80dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="80dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/plant_10"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/navigation_buttons"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navigation_buttons" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.647" />
 
     <FrameLayout
         android:id="@+id/navigation_buttons"
@@ -105,6 +107,7 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/button_coin"
         android:layout_margin="10dp"
         android:background="@drawable/hp_buttons_background"
         android:src="@drawable/baseline_star_outline_24"
