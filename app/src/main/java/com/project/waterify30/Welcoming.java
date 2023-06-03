@@ -19,7 +19,7 @@ public class Welcoming extends AppCompatActivity {
         buttonNext.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                logic.openActivity(Welcoming.this, Profile.class);
+                logic.openActivity(Welcoming.this, PersonalInformation.class);
             }
         });
 
