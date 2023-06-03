@@ -13,6 +13,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -93,9 +94,20 @@ public class Homepage extends AppCompatActivity  {
     public void buttonPopUpWindow( View view ) {
         LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         View viewPopupwindow = set();
-        final PopupWindow popupWindow = new PopupWindow ( viewPopupwindow, 900, 900, true);
+        final PopupWindow popupWindow = new PopupWindow ( viewPopupwindow, 900, 900, false);
         popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
-        logic.openActivity(Homepage.this, Homepage.class);
+
+        //close pop-up
+        viewPopupwindow.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+                logic.openActivity(Homepage.this, Homepage.class);
+            }
+
+        });
+
     }
 
     public View set(){
@@ -130,11 +142,4 @@ public class Homepage extends AppCompatActivity  {
     }
 
 
-    /*
-    @Override
-    public void onProfilePictureUpdated(Bitmap profilePicture) {
-        this.profilePicture.setImageBitmap(profilePicture);
-    }
-
-     */
 }

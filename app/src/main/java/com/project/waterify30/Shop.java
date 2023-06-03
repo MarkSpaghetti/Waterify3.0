@@ -90,7 +90,7 @@ public class Shop extends AppCompatActivity {
         plant2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (pop.getDroplets() >= 30) {
+                if (pop.getDroplets() >= 50) {
                     // Save the new image resource identifier to SharedPreferences
                     SharedPreferences preferences2 = getApplicationContext().getSharedPreferences("prefs2", 0);
                     SharedPreferences.Editor editor2 = preferences2.edit();
