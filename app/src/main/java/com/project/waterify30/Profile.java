@@ -9,26 +9,18 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.renderscript.Matrix3f;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -181,18 +173,18 @@ public class Profile extends AppCompatActivity {
 
 
 
-        private void displayUserData(){
-            if (user == null){
-                logic.openActivity(getApplicationContext(),LogIn.class);
-                finish();
-            }
-            else {
-                    email.setText(user.getEmail());
-                    username.setText(logic.ignoreEmail(user));
-            }
-
-
+    private void displayUserData(){
+        if (user == null){
+            logic.openActivity(getApplicationContext(),LogIn.class);
+            finish();
         }
+        else {
+            email.setText(user.getEmail());
+            username.setText(logic.ignoreEmail(user));
+        }
+
+
+    }
 
 
     public void loadImageIfThere() {
