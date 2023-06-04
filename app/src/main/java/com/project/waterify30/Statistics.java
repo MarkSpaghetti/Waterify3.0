@@ -17,7 +17,7 @@ public class Statistics extends AppCompatActivity {
     private int update=0;
     //private int daily_goal;
     ProgressBar progressBar;
-    TextView textView;
+    TextView textView, daily_goal_tw;
     private ImageButton buttonHome;
     private ImageButton buttonDiagrams;
     private Logic logic = new Logic();
@@ -56,5 +56,9 @@ public class Statistics extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Congratulations! You accomplished your daily goal!", Toast.LENGTH_LONG).show();
             MainActivity.droplets += 5;
         }
+
+        daily_goal_tw = (TextView) findViewById(R.id.text_view_daily_goal);
+        String text = String.valueOf(MainActivity.daily_goal);
+        daily_goal_tw.setText("Your daily goal is \n " + text + " ml");
     }
 }

@@ -9,7 +9,7 @@ import org.w3c.dom.Text;
 
 public class PopUpWindow_coins extends AppCompatActivity {
     private static int level = 0;
-    private static int droplets = 40;
+    int drop = MainActivity.droplets;
 
     TextView txtLevel;
 
@@ -26,7 +26,7 @@ public class PopUpWindow_coins extends AppCompatActivity {
     }
 
     public int getDroplets(){
-        return droplets;
+        return drop;
     }
 
     public void updateLevel(){
@@ -34,7 +34,7 @@ public class PopUpWindow_coins extends AppCompatActivity {
     }
 
     public void updateDroplets(int i){
-        this.droplets = this.droplets - i;
+        this.drop = this.drop - i;
     }
 
 }
