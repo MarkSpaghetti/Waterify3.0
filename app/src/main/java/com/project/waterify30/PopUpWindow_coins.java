@@ -8,8 +8,8 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class PopUpWindow_coins extends AppCompatActivity {
-    private int level = 0;
-    private int droplets = 40;
+    private static int level = 0;
+    private static int droplets = 40;
 
     TextView txtLevel;
 
