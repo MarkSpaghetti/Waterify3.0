@@ -68,7 +68,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/age_enter"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -86,7 +87,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/weight_enter"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

@@ -18,10 +18,9 @@ public class MainActivity extends AppCompatActivity {
    public static String imagePath;
    public static int cup;
    public static int daily_progress;
-
-   public static int[] week = {2,6,3,4,5,8,4};
-   //public static int day = 0;
-   //public static String prevDate;
+   public static  int daily_goal = 0;
+   public static int[] week = {5,2,3,6,4,2,1};
+   public static int droplets;
 
 
     @Override
