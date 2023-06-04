@@ -25,14 +25,18 @@
             android:textStyle="bold" />
     </Toolbar>
 
-    <include
+    <ImageButton
         android:id="@+id/settings_close_button"
-        layout="@layout/header_close_button"
-        android:layout_width="413dp"
-        android:layout_height="74dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/circle"
+        android:src="@drawable/icon_close"
+        android:backgroundTint="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,7 +48,7 @@
         android:background="@drawable/green_background"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/close_button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"

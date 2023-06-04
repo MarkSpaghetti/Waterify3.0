@@ -104,17 +104,17 @@
         app:layout_constraintTop_toTopOf="@id/navigation_buttons" />
 
     <ImageButton
+        android:id="@+id/button_coin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button_coin"
         android:layout_margin="10dp"
         android:background="@drawable/hp_buttons_background"
+        android:onClick="buttonPopUpWindow"
+
         android:src="@drawable/baseline_star_outline_24"
 
         app:layout_constraintEnd_toEndOf="@id/navigation_buttons"
-
-        app:layout_constraintTop_toTopOf="@id/navigation_buttons"
-        />
+        app:layout_constraintTop_toTopOf="@id/navigation_buttons" />
 
     <ImageButton
         android:layout_width="wrap_content"

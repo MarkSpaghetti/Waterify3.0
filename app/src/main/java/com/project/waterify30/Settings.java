@@ -19,7 +19,7 @@ public class Settings extends AppCompatActivity implements AdapterView.OnItemSel
     ArrayAdapter<String> adapterHealthItems;
     ImageButton closebutton;
 
-    Logic logic;
+    Logic logic = new Logic();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class Settings extends AppCompatActivity implements AdapterView.OnItemSel
         closebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                logic.openActivity(Settings.this,Homepage.class);
+                logic.openActivity(Settings.this, Profile.class);
             }
         });
 
