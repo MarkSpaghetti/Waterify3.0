@@ -20,16 +20,6 @@ public class PopUpWindow_coins extends AppCompatActivity {
         txtLevel = findViewById(R.id.textView_level);
     }
 
-/*    public void setLevel() {
-
-        txtLevel.setText("String.valueOf(level)");
-    }
-
-    public void setDroplets() {
-        TextView txt_droplets = findViewById(R.id.textView_droplets);
-        txt_droplets.setText(String.valueOf(droplets));
-    }
-    */
 
     public int getLevel(){
         return level;
