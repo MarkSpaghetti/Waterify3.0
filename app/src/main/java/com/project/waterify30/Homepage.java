@@ -7,10 +7,13 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -19,12 +22,17 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.File;
+
 public class Homepage extends AppCompatActivity  {
     private ImageButton buttonProfile, buttonStatistics, buttonSocials, buttonStore, buttonQuiz, buttonGarden, buttonDrops;
 
     private ImageView profilePicture;
     int droplets = 0;
     int level = 0;
+    String imagePath;
+    private Bitmap originalBitmap;
+
     private Logic logic = new Logic();
 
 
@@ -35,6 +43,8 @@ public class Homepage extends AppCompatActivity  {
 
         profilePicture = findViewById(R.id.button_profile);
         buttonProfile = (ImageButton)findViewById(R.id.button_profile);
+        loadImageIfThere();
+
         buttonProfile.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -84,9 +94,20 @@ public class Homepage extends AppCompatActivity  {
     public void buttonPopUpWindow( View view ) {
         LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         View viewPopupwindow = set();
-        final PopupWindow popupWindow = new PopupWindow ( viewPopupwindow, 900, 900, true);
+        final PopupWindow popupWindow = new PopupWindow ( viewPopupwindow, 900, 900, false);
         popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
-        logic.openActivity(Homepage.this, Homepage.class);
+
+        //close pop-up
+        viewPopupwindow.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+                logic.openActivity(Homepage.this, Homepage.class);
+            }
+
+        });
+
     }
 
     public View set(){
@@ -107,14 +128,18 @@ public class Homepage extends AppCompatActivity  {
         return myLayout;
     }
 
-
-
-
-    /*
-    @Override
-    public void onProfilePictureUpdated(Bitmap profilePicture) {
-        this.profilePicture.setImageBitmap(profilePicture);
+    public void loadImageIfThere() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        imagePath = sharedPreferences.getString("imagePath", null);
+        if (imagePath != null) {
+            File file = new File(imagePath);
+            if (file.exists()) {
+                originalBitmap = BitmapFactory.decodeFile(imagePath); // Load the original bitmap
+                Bitmap circularBitmap = logic.getRoundedBitmap(originalBitmap);
+                buttonProfile.setImageBitmap(circularBitmap);
+            }
+        }
     }
 
-     */
+
 }
