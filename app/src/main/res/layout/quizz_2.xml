@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="400dp"
+    android:layout_height="400dp"
+    android:background="@drawable/hp_buttons_background"
+    android:backgroundTint="@color/red"
+    android:id="@+id/pop_up_window_price"
+    >
+
+
+    <ImageView
+        android:id="@+id/white_background"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/hp_buttons_background"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/yes"
+        android:layout_width="115dp"
+        android:layout_height="55dp"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/round_edges"
+        android:backgroundTint="@color/yellow"
+        android:text="C"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/white_background"
+        app:layout_constraintEnd_toEndOf="@+id/white_background" />
+
+    <Button
+        android:id="@+id/no1"
+        android:layout_width="115dp"
+        android:layout_height="55dp"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/round_edges"
+        android:backgroundTint="@color/yellow"
+        android:text="D"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/white_background"
+        app:layout_constraintStart_toStartOf="@+id/white_background" />
+
+    <Button
+        android:id="@+id/no2"
+        android:layout_width="115dp"
+        android:layout_height="55dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/round_edges"
+        android:backgroundTint="@color/yellow"
+        android:text="A"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/no1"
+        app:layout_constraintEnd_toEndOf="@+id/no1"
+        app:layout_constraintStart_toStartOf="@+id/no1" />
+
+    <Button
+        android:id="@+id/no3"
+        android:layout_width="115dp"
+        android:layout_height="55dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/round_edges"
+        android:backgroundTint="@color/yellow"
+        android:text="B12"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/yes"
+        app:layout_constraintEnd_toEndOf="@+id/yes"
+        app:layout_constraintStart_toStartOf="@+id/yes" />
+
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:text="Oranges contain vitamin..."
+        android:textColor="@color/black"
+        android:textSize="23dp"
+        app:layout_constraintBottom_toTopOf="@+id/yes"
+        app:layout_constraintEnd_toEndOf="@+id/white_background"
+        app:layout_constraintStart_toStartOf="@+id/white_background"
+        app:layout_constraintTop_toTopOf="@+id/white_background"
+        app:layout_constraintVertical_bias="0.525" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

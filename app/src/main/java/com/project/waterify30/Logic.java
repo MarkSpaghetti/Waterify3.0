@@ -1,6 +1,9 @@
 package com.project.waterify30;
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 import static android.content.Context.MODE_PRIVATE;
 
+
+import static androidx.core.content.ContextCompat.getSystemService;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,8 +14,15 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.view.LayoutInflater;
 
 import com.google.firebase.auth.FirebaseUser;
 
@@ -23,6 +33,7 @@ import androidx.lifecycle.MutableLiveData;
 
 public class Logic {
 
+
     public void openActivity(Context fromActivity ,Class activityToOpen){
         Intent intent = new Intent( fromActivity, activityToOpen);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -32,6 +43,7 @@ public class Logic {
 //    private val dbfriends = FirebaseDatabase.getInstance().getReference();
 //    private val _result = MutableLiveData<Exception?>()
 //    val result: LiveData<Exception?> get() = _result
+
 
     public void setImage(Context fromActivity, Class activityToOpen){
         Intent intent = new Intent();
@@ -64,4 +76,5 @@ public class Logic {
 
         return circularBitmap;
     }
+
 }
