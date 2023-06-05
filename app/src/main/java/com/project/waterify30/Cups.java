@@ -47,6 +47,7 @@ public class Cups extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 MainActivity.cup = 150;
+                Toast.makeText(getApplicationContext(),"Hurray, you drunk 150ml of water!", Toast.LENGTH_LONG).show();
                 logic.openActivity(Cups.this,Homepage.class);
             }
         });

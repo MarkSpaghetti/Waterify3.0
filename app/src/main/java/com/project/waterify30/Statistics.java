@@ -15,7 +15,6 @@ import android.widget.Toast;
 public class Statistics extends AppCompatActivity {
 
     private int update=0;
-    //private int daily_goal;
     ProgressBar progressBar;
     TextView textView, daily_goal_tw;
     private ImageButton buttonHome;
@@ -48,11 +47,15 @@ public class Statistics extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.text_view_progress);
 
         update = MainActivity.cup;
-        MainActivity.daily_progress += (int) (update*100/MainActivity.daily_goal);
+        if (MainActivity.daily_goal == 0)
+            MainActivity.daily_progress = 0;
+        else
+            MainActivity.daily_progress += (int) (update*100/MainActivity.daily_goal);
         progressBar.setProgress(MainActivity.daily_progress);
-        textView.setText(String.valueOf(MainActivity.daily_progress));
+        textView.setText(String.valueOf(MainActivity.daily_progress) + " %");
+        MainActivity.cup = 0;
 
-        if (MainActivity.daily_progress >= MainActivity.daily_goal) {
+        if (MainActivity.daily_progress >= MainActivity.daily_goal && MainActivity.daily_goal > 0) {
             Toast.makeText(getApplicationContext(), "Congratulations! You accomplished your daily goal!", Toast.LENGTH_LONG).show();
             MainActivity.droplets += 5;
         }

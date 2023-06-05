@@ -36,12 +36,16 @@ public class Profile extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseUser user;
     private ImageButton buttonClose, buttonSettings, editProfilePic;
-    private Button buttonSignout,buttonPersonalData,buttonChangeMood;
-    private TextView email,username;
+    private Button buttonSignout,buttonPersonalData;
+    private TextView email, username, age, weight, sport, health, gender;
     private ImageView profilePicture;
     private static final int IMAGE_PICK_CODE = 1000;
     private static final int PERMISSION_CODE = 1001;
     String imagePath;
+
+    String[] healthItems = {"No", "Yes"};
+    String[] sexItems = {"Male","Female"};
+    String[] sportItems = {"Never", "Low", "Medium", "High"};
 
     private Bitmap originalBitmap;
 
@@ -60,10 +64,21 @@ public class Profile extends AppCompatActivity {
         user = auth.getCurrentUser();
         imagePath = MainActivity.imagePath;
         buttonPersonalData = findViewById(R.id.button_personal_information);
-        buttonChangeMood = findViewById(R.id.button_change_mood);
+
+        age = findViewById(R.id.age_shown);
+        weight = findViewById(R.id.weight_shown);
+        sport = findViewById(R.id.sport_shown);
+        health = findViewById(R.id.health_shown);
+        gender = findViewById(R.id.gender_shown);
 
         loadImageIfThere();
         displayUserData();
+
+        age.setText(String.valueOf(MainActivity.age) + " years");
+        weight.setText(String.valueOf(MainActivity.weight) + " kg");
+        health.setText(String.valueOf(healthItems[MainActivity.index_health]));
+        sport.setText(String.valueOf(sportItems[MainActivity.index_sport]));
+        gender.setText(String.valueOf(sexItems[MainActivity.index_sex]));
 
         editProfilePic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,13 +91,6 @@ public class Profile extends AppCompatActivity {
                         pickImageFromGallery();
                     }
                 }
-            }
-        });
-
-        buttonChangeMood.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO make pop up
             }
         });
 
@@ -103,8 +111,8 @@ public class Profile extends AppCompatActivity {
         buttonClose.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                //BitmapDrawable drawable = (BitmapDrawable) profilePicture.getDrawable();
-                //Bitmap updatedBitmap = drawable.getBitmap();
+                BitmapDrawable drawable = (BitmapDrawable) profilePicture.getDrawable();
+                Bitmap updatedBitmap = drawable.getBitmap();
 
                 logic.openActivity(Profile.this, Homepage.class);
 
