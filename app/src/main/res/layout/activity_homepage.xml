@@ -54,20 +54,19 @@
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="40dp"
         android:background="@drawable/hp_profile_background"
         android:scaleType="centerCrop"
         android:src="@drawable/hp_person_outline_24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
 
-        />
+
+        app:layout_constraintBottom_toBottomOf="@+id/navigation_buttons"
+        app:layout_constraintEnd_toEndOf="@+id/to_garden_button"
+        app:layout_constraintTop_toTopOf="@+id/navigation_buttons" />
 
     <ImageButton
         android:id="@+id/to_garden_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
         android:background="@drawable/green_background"
         android:src="@drawable/plant_10"
         android:scaleType="fitCenter"
@@ -88,7 +87,6 @@
         android:layout_height="130dp"
         android:layout_marginStart="40dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
         android:background="@drawable/green_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

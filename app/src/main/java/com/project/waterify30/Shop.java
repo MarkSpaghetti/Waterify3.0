@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class Shop extends AppCompatActivity {
 
-    private ImageButton buttonHome, plant1, plant2;
+    private ImageButton buttonHome, buttonStats;
     private Logic logic = new Logic();
 
     public static final String KEY1 = "photo", KEY2 = "photo2";
@@ -25,8 +25,6 @@ public class Shop extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
-
-        PopUpWindow_coins pop = new PopUpWindow_coins();
 
         buttonHome = (ImageButton) findViewById(R.id.home_button);
         buttonHome.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +36,18 @@ public class Shop extends AppCompatActivity {
         });
 
 
+        /*        buttonStats = (ImageButton) findViewById(R.id.statistics_button);
+        buttonStats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                logic.openActivity(Shop.this, Statistics.class);
+            }
+        });*/
+
+
         // setting up the buttons to buy the plants
+        PopUpWindow_coins pop = new PopUpWindow_coins();
 
         ImageButton plant1 = findViewById(R.id.plant1);
         plant1.setOnClickListener(new View.OnClickListener() {
