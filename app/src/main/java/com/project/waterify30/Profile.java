@@ -111,8 +111,8 @@ public class Profile extends AppCompatActivity {
         buttonClose.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                BitmapDrawable drawable = (BitmapDrawable) profilePicture.getDrawable();
-                Bitmap updatedBitmap = drawable.getBitmap();
+                // BitmapDrawable drawable = (BitmapDrawable) profilePicture.getDrawable();
+                //  Bitmap updatedBitmap = drawable.getBitmap();
 
                 logic.openActivity(Profile.this, Homepage.class);
 
