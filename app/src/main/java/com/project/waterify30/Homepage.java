@@ -15,21 +15,22 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
 import java.io.File;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Homepage extends AppCompatActivity  {
-    private ImageButton buttonProfile, buttonStatistics, buttonSocials, buttonStore, buttonQuiz, buttonGarden, buttonDrops;
+    private ImageButton buttonProfile, buttonStatistics, buttonSocials, buttonStore, buttonGarden, buttonDrops;
 
     private ImageView profilePicture;
-    int droplets = 0;
-    int level = 0;
     String imagePath;
     private Bitmap originalBitmap;
 
@@ -126,6 +127,68 @@ public class Homepage extends AppCompatActivity  {
         txt_droplets.setText(Integer.toString(pop.getDroplets()) + " droplets");
 
         return myLayout;
+    }
+
+    public void quizz(View view) {
+        int[] q = {R.layout.quizz, R.layout.quizz_1, R.layout.quizz_2, R.layout.quizz_3, R.layout.quizz_4};
+        int min = 0;
+        int max = 3;
+        int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
+
+
+        LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        View viewPopupwindow = layoutInflater.inflate(q[randomNum], null);
+        final PopupWindow popupWindow = new PopupWindow(viewPopupwindow, 900, 900, true);
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        //Answers
+        PopUpWindow_coins pop = new PopUpWindow_coins();
+        Button yes = (Button) viewPopupwindow.findViewById(R.id.yes);
+        Button no1 = (Button) viewPopupwindow.findViewById(R.id.no1);
+        Button no2 = (Button) viewPopupwindow.findViewById(R.id.no2);
+        Button no3 = (Button) viewPopupwindow.findViewById(R.id.no3);
+
+        yes.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                pop.addDroplets(10);
+                Toast.makeText(getApplicationContext(), "Hurray!, you are correct. You have earned 10 droplets", Toast.LENGTH_LONG).show();
+                popupWindow.dismiss();
+            }
+
+        });
+
+        no1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Sorry, your answer was wrong", Toast.LENGTH_LONG).show();
+                popupWindow.dismiss();
+            }
+
+        });
+
+        no2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Sorry, your answer was wrong", Toast.LENGTH_LONG).show();
+                popupWindow.dismiss();
+            }
+
+        });
+
+        no3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Sorry, your answer was wrong", Toast.LENGTH_LONG).show();
+                popupWindow.dismiss();
+            }
+
+        });
+
     }
 
     public void loadImageIfThere() {

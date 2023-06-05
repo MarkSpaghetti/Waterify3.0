@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
    public static int daily_progress;
    public static  int daily_goal;
    public static int[] week = {5,2,3,6,4,2,1};
-   public static int droplets;
+   public static int droplets = PopUpWindow_coins.drop;
 
 
     @Override
