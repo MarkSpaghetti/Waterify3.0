@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -21,8 +22,10 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -36,7 +39,7 @@ public class Profile extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseUser user;
     private ImageButton buttonClose, buttonSettings, editProfilePic;
-    private Button buttonSignout,buttonPersonalData;
+    private Button buttonSignout, buttonPersonalData;
     private TextView email, username, age, weight, sport, health, gender;
     private ImageView profilePicture;
     private static final int IMAGE_PICK_CODE = 1000;
@@ -44,7 +47,7 @@ public class Profile extends AppCompatActivity {
     String imagePath;
 
     String[] healthItems = {"No", "Yes"};
-    String[] sexItems = {"Male","Female"};
+    String[] sexItems = {"Male", "Female"};
     String[] sportItems = {"Never", "Low", "Medium", "High"};
 
     private Bitmap originalBitmap;
@@ -56,7 +59,7 @@ public class Profile extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         buttonSignout = findViewById(R.id.button_logout);
         email = findViewById(R.id.email_shown);
-        buttonClose = (ImageButton)findViewById(R.id.button6);
+        buttonClose = (ImageButton) findViewById(R.id.button6);
         buttonSettings = findViewById(R.id.settingsButton);
         username = findViewById(R.id.username_shown);
         profilePicture = findViewById(R.id.profile_picture);
@@ -97,18 +100,18 @@ public class Profile extends AppCompatActivity {
         buttonPersonalData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                logic.openActivity(getApplicationContext(),PersonalInformation.class);
+                logic.openActivity(getApplicationContext(), PersonalInformation.class);
             }
         });
         buttonSignout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                logic.openActivity(getApplicationContext(),LogIn.class);
+                logic.openActivity(getApplicationContext(), LogIn.class);
             }
         });
 
-        buttonClose.setOnClickListener(new View.OnClickListener(){
+        buttonClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // BitmapDrawable drawable = (BitmapDrawable) profilePicture.getDrawable();
@@ -189,18 +192,11 @@ public class Profile extends AppCompatActivity {
     }
 
 
-
-
-
-
-
-
-    private void displayUserData(){
-        if (user == null){
-            logic.openActivity(getApplicationContext(),LogIn.class);
+    private void displayUserData() {
+        if (user == null) {
+            logic.openActivity(getApplicationContext(), LogIn.class);
             finish();
-        }
-        else {
+        } else {
             email.setText(user.getEmail());
             username.setText(logic.ignoreEmail(user));
         }

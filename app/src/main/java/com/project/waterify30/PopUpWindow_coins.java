@@ -21,19 +21,19 @@ public class PopUpWindow_coins extends AppCompatActivity {
     }
 
 
-    public int getLevel(){
+    public int getLevel() {
         return level;
     }
 
-    public int getDroplets(){
+    public int getDroplets() {
         return drop;
     }
 
-    public void updateLevel(){
+    public void updateLevel() {
         this.level++;
     }
 
-    public void updateDroplets(int i){
+    public void updateDroplets(int i) {
         this.drop = this.drop - i;
     }
 

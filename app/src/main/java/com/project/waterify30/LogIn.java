@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LogIn extends AppCompatActivity {
     private Logic logic = new Logic();
-    TextInputEditText editTEmail,editTPassword;
+    TextInputEditText editTEmail, editTPassword;
     Button buttonLogIn;
     FirebaseAuth mAuth;
     TextView goSignUp;
@@ -30,8 +30,8 @@ public class LogIn extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            logic.openActivity(getApplicationContext(),Homepage.class);
+        if (currentUser != null) {
+            logic.openActivity(getApplicationContext(), Homepage.class);
             finish();
         }
     }
@@ -56,26 +56,26 @@ public class LogIn extends AppCompatActivity {
         buttonLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email,password;
+                String email, password;
                 email = String.valueOf(editTEmail.getText());
                 password = String.valueOf(editTPassword.getText());
 
-                if(TextUtils.isEmpty(email)) {
-                    Toast.makeText(LogIn.this,"Enter email", Toast.LENGTH_LONG).show();
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(LogIn.this, "Enter email", Toast.LENGTH_LONG).show();
                     return;
                 }
 
-                if(TextUtils.isEmpty(password)) {
-                    Toast.makeText(LogIn.this,"Enter password", Toast.LENGTH_LONG).show();
+                if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(LogIn.this, "Enter password", Toast.LENGTH_LONG).show();
                     return;
                 }
                 mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(),"Login Successfull",Toast.LENGTH_SHORT).show();
-                                    logic.openActivity(getApplicationContext(),Homepage.class);
+                                    Toast.makeText(getApplicationContext(), "Login Successfull", Toast.LENGTH_SHORT).show();
+                                    logic.openActivity(getApplicationContext(), Homepage.class);
                                     finish();
                                 } else {
                                     // If sign in fails, display a message to the user.

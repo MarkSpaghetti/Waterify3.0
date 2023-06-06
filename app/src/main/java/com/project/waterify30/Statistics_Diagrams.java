@@ -20,6 +20,7 @@ public class Statistics_Diagrams extends AppCompatActivity {
     private ImageButton closeButton;
 
     private Logic logic = new Logic();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

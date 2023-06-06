@@ -9,15 +9,15 @@
 
     <LinearLayout
         android:id="@+id/imageView2"
-        android:layout_width="match_parent"
+        android:layout_width="255dp"
+        android:layout_height="451dp"
         android:layout_marginStart="80dp"
-        android:layout_marginEnd="80dp"
-        android:layout_height="match_parent"
         android:layout_marginTop="200dp"
+        android:layout_marginEnd="80dp"
         android:layout_marginBottom="100dp"
-        android:orientation="vertical"
         android:background="@drawable/round_edges"
         android:backgroundTint="@color/dark_green"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,134 +27,134 @@
             android:id="@+id/your_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your name"
-            android:textStyle="bold"
             android:layout_marginStart="35dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:text="Your name"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/username_shown"
             android:layout_width="200dp"
             android:layout_height="30dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/s_white_box"
             android:gravity="center"
-            android:textColor="@color/black"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"/>
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/your_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
             android:text="Your email"
-            android:textStyle="bold"
-            android:layout_marginStart="35dp" />
+            android:textStyle="bold" />
 
 
         <TextView
             android:id="@+id/email_shown"
             android:layout_width="200dp"
             android:layout_height="30dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/s_white_box"
             android:gravity="center"
-            android:textColor="@color/black"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"/>
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/your_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
             android:text="Your age"
-            android:textStyle="bold"
-            android:layout_marginStart="35dp"/>
+            android:textStyle="bold" />
 
 
         <TextView
             android:id="@+id/age_shown"
             android:layout_width="200dp"
             android:layout_height="30dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/s_white_box"
             android:gravity="center"
-            android:textColor="@color/black"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"/>
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/your_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
             android:text="Your weight"
-            android:textStyle="bold"
-            android:layout_marginStart="35dp"/>
+            android:textStyle="bold" />
 
 
         <TextView
             android:id="@+id/weight_shown"
             android:layout_width="200dp"
             android:layout_height="30dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/s_white_box"
             android:gravity="center"
-            android:textColor="@color/black"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"/>
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/your_health"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
             android:text="Do you have health issues?"
-            android:textStyle="bold"
-            android:layout_marginStart="35dp"/>
+            android:textStyle="bold" />
 
 
         <TextView
             android:id="@+id/health_shown"
             android:layout_width="200dp"
             android:layout_height="30dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/s_white_box"
             android:gravity="center"
-            android:textColor="@color/black"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"/>
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/your_sport"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
             android:text="Frequency of sport"
-            android:textStyle="bold"
-            android:layout_marginStart="35dp"/>
+            android:textStyle="bold" />
 
 
         <TextView
             android:id="@+id/sport_shown"
             android:layout_width="200dp"
             android:layout_height="30dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/s_white_box"
             android:gravity="center"
-            android:textColor="@color/black"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"/>
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/your_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
             android:text="Your gender"
-            android:textStyle="bold"
-            android:layout_marginStart="35dp"/>
+            android:textStyle="bold" />
 
 
         <TextView
             android:id="@+id/gender_shown"
             android:layout_width="200dp"
             android:layout_height="30dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/s_white_box"
             android:gravity="center"
-            android:textColor="@color/black"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="10dp"/>
+            android:textColor="@color/black" />
 
     </LinearLayout>
 

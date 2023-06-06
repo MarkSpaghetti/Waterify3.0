@@ -1,4 +1,5 @@
 package com.project.waterify30;
+
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 import static android.content.Context.MODE_PRIVATE;
 
@@ -34,8 +35,8 @@ import androidx.lifecycle.MutableLiveData;
 public class Logic {
 
 
-    public void openActivity(Context fromActivity ,Class activityToOpen){
-        Intent intent = new Intent( fromActivity, activityToOpen);
+    public void openActivity(Context fromActivity, Class activityToOpen) {
+        Intent intent = new Intent(fromActivity, activityToOpen);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         fromActivity.startActivity(intent);
     }
@@ -45,18 +46,17 @@ public class Logic {
 //    val result: LiveData<Exception?> get() = _result
 
 
-    public void setImage(Context fromActivity, Class activityToOpen){
+    public void setImage(Context fromActivity, Class activityToOpen) {
         Intent intent = new Intent();
     }
 
-    public String ignoreEmail(FirebaseUser user){
+    public String ignoreEmail(FirebaseUser user) {
         String email = user.getEmail();
         String username = "";
-        for (char a:email.toCharArray() ) {
-            if (a!='@'){
+        for (char a : email.toCharArray()) {
+            if (a != '@') {
                 username += a;
-            }
-            else return username;
+            } else return username;
         }
         return username;
     }

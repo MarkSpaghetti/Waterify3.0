@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -17,18 +18,29 @@ import com.google.android.material.textfield.TextInputEditText;
 public class PersonalInformation extends AppCompatActivity {
 
     String[] healthItems = {"No", "Yes"};
-    String[] sexItems = {"Male","Female"};
+    String[] sexItems = {"Male", "Female"};
     String[] sportItems = {"Never", "Low", "Medium", "High"};
-    EditText ageET,weightET;
+    EditText ageET, weightET;
     int sport, result;
     Button buttonDone;
     Logic logic;
+
+    ImageButton buttonClose;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_information);
         logic = new Logic();
+
+        buttonClose = findViewById(R.id.button_close_personal_info);
+
+        buttonClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logic.openActivity(getApplicationContext(), Profile.class);
+            }
+        });
 
         // health problems spinner definition
         Spinner spinnerHealth = findViewById(R.id.health_spinner);
@@ -45,7 +57,7 @@ public class PersonalInformation extends AppCompatActivity {
         spinnerSports.setAdapter(adapterSports);
 
         Spinner spinnerSex = findViewById(R.id.sex_spinner);
-        ArrayAdapter<String> adapterSex = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,sexItems);
+        ArrayAdapter<String> adapterSex = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, sexItems);
         adapterSex.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSex.setAdapter(adapterSex);
 
@@ -69,15 +81,14 @@ public class PersonalInformation extends AppCompatActivity {
     }
 
 
-    private int dailyIntakeCalculator(){
+    private int dailyIntakeCalculator() {
         if (MainActivity.index_sport == 0) { //never
             sport = 0;
         } else if (MainActivity.index_sport == 1) { //low
             sport = 5;
         } else if (MainActivity.index_sport == 2) { //medium
             sport = 10;
-        }
-        else { //high
+        } else { //high
             sport = 15;
         }
 

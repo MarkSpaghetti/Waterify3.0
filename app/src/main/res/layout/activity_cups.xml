@@ -30,6 +30,19 @@
         app:layout_constraintStart_toStartOf="@+id/white_background"
         app:layout_constraintTop_toTopOf="@+id/white_background" />
 
+    <ImageButton
+        android:id="@+id/button_close_cupsize"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/circle"
+        android:src="@drawable/icon_close"
+        android:backgroundTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
     <Button
         android:id="@+id/fifty_ml"
         android:layout_width="match_parent"

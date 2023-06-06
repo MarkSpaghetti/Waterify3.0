@@ -17,7 +17,7 @@ public class FriendRequest extends AppCompatActivity {
         setContentView(R.layout.activity_friend_request);
 
         buttonExit = (ImageButton) findViewById(R.id.button_exit);
-        buttonExit.setOnClickListener(new View.OnClickListener(){
+        buttonExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -27,7 +27,7 @@ public class FriendRequest extends AppCompatActivity {
         });
 
         buttonProfile = (ImageButton) findViewById(R.id.button_profile_friendNr1);
-        buttonProfile.setOnClickListener(new View.OnClickListener(){
+        buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -37,7 +37,7 @@ public class FriendRequest extends AppCompatActivity {
         });
 
         buttonProfile = (ImageButton) findViewById(R.id.button_profile_friendNr2);
-        buttonProfile.setOnClickListener(new View.OnClickListener(){
+        buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -47,7 +47,7 @@ public class FriendRequest extends AppCompatActivity {
         });
 
         buttonProfile = (ImageButton) findViewById(R.id.button_profile_friendNr3);
-        buttonProfile.setOnClickListener(new View.OnClickListener(){
+        buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -57,7 +57,7 @@ public class FriendRequest extends AppCompatActivity {
         });
 
         buttonProfile = (ImageButton) findViewById(R.id.button_profile_friendNr4);
-        buttonProfile.setOnClickListener(new View.OnClickListener(){
+        buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

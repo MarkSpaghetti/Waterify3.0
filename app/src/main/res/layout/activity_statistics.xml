@@ -54,14 +54,16 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/circle"
         android:backgroundTint="@color/yellow"
         android:padding="20dp"
         android:scaleType="fitCenter"
         android:src="@drawable/baseline_query_stats_24"
+        app:layout_constraintBottom_toTopOf="@+id/background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/background"
@@ -80,14 +82,16 @@
         android:layout_margin="30dp"
         android:background="@drawable/round_edges"
         android:backgroundTint="@color/yellow"
+        app:layout_constraintBottom_toTopOf="@+id/background"
+        app:layout_constraintEnd_toStartOf="@+id/statistics_diagram_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_view_daily_goal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your daily goal is"
+        android:text="Daily goal:"
         android:textColor="@color/black"
         android:textAlignment="center"
         android:textSize="25dp"

@@ -22,7 +22,7 @@ import java.util.HashMap;
 
 public class SignUp extends AppCompatActivity {
     private Logic logic = new Logic();
-    TextInputEditText editTEmail,editTPassword;
+    TextInputEditText editTEmail, editTPassword;
     Button buttonSignup;
     FirebaseAuth mAuth;
     TextView goLogIn;
@@ -32,8 +32,8 @@ public class SignUp extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            logic.openActivity(getApplicationContext(),Homepage.class);
+        if (currentUser != null) {
+            logic.openActivity(getApplicationContext(), Homepage.class);
             finish();
         }
     }
@@ -61,21 +61,22 @@ public class SignUp extends AppCompatActivity {
         buttonSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email,password;
+                String email, password;
                 email = String.valueOf(editTEmail.getText());
                 password = String.valueOf(editTPassword.getText());
 
-                if(TextUtils.isEmpty(email)) {
-                    Toast.makeText(SignUp.this,"Enter email", Toast.LENGTH_LONG).show();
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(SignUp.this, "Enter email", Toast.LENGTH_LONG).show();
                     return;
                 }
-
-                if(TextUtils.isEmpty(password)) {
-                    Toast.makeText(SignUp.this,"Enter password", Toast.LENGTH_LONG).show();
+                if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(SignUp.this, "Enter password", Toast.LENGTH_LONG).show();
                     return;
                 }
-
-
+                if (password.length() < 6) {
+                    Toast.makeText(SignUp.this, "Password should be at least 6 characters long", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
@@ -83,12 +84,12 @@ public class SignUp extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(SignUp.this, "The authentication was successful",
                                             Toast.LENGTH_SHORT).show();
-                                            mAuth.signInWithEmailAndPassword(email, password)
-                                                .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
-                                                    @Override
-                                                    public void onComplete(@NonNull Task<AuthResult> task) {
-                                                            logic.openActivity(getApplicationContext(),Welcoming.class);
-                                                            finish();
+                                    mAuth.signInWithEmailAndPassword(email, password)
+                                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                                    logic.openActivity(getApplicationContext(), Welcoming.class);
+                                                    finish();
                                                 }
                                             });
                                 } else {
@@ -98,9 +99,6 @@ public class SignUp extends AppCompatActivity {
                                 }
                             }
                         });
-
-
-
             }
         });
     }

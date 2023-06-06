@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class Cups extends AppCompatActivity {
 
     private Button fiftyML, hundredML, hundredFiftyML, twoHundredML;
+    private ImageButton buttonClose;
     private Logic logic = new Logic();
 
     @Override
@@ -20,13 +22,22 @@ public class Cups extends AppCompatActivity {
         setContentView(R.layout.activity_cups);
 
         fiftyML = (Button) findViewById(R.id.fifty_ml);
+
+        buttonClose = findViewById(R.id.button_close_cupsize);
+
+        buttonClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logic.openActivity(getApplicationContext(), Homepage.class);
+            }
+        });
         fiftyML.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainActivity.cup = 50;
-                Toast.makeText(getApplicationContext(),"Hurray, you drunk 50ml of water!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Hurray, you drunk 50ml of water!", Toast.LENGTH_LONG).show();
 
-                logic.openActivity(Cups.this,Homepage.class);
+                logic.openActivity(Cups.this, Homepage.class);
             }
         });
 
@@ -36,9 +47,9 @@ public class Cups extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 MainActivity.cup = 100;
-                Toast.makeText(getApplicationContext(),"Hurray, you drunk 100ml of water!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Hurray, you drunk 100ml of water!", Toast.LENGTH_LONG).show();
 
-                logic.openActivity(Cups.this,Homepage.class);
+                logic.openActivity(Cups.this, Homepage.class);
             }
         });
 
@@ -47,8 +58,8 @@ public class Cups extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 MainActivity.cup = 150;
-                Toast.makeText(getApplicationContext(),"Hurray, you drunk 150ml of water!", Toast.LENGTH_LONG).show();
-                logic.openActivity(Cups.this,Homepage.class);
+                Toast.makeText(getApplicationContext(), "Hurray, you drunk 150ml of water!", Toast.LENGTH_LONG).show();
+                logic.openActivity(Cups.this, Homepage.class);
             }
         });
 
@@ -57,9 +68,9 @@ public class Cups extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 MainActivity.cup = 200;
-                Toast.makeText(getApplicationContext(),"Hurray, you drunk 200ml of water!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Hurray, you drunk 200ml of water!", Toast.LENGTH_LONG).show();
 
-                logic.openActivity(Cups.this,Homepage.class);
+                logic.openActivity(Cups.this, Homepage.class);
             }
         });
     }

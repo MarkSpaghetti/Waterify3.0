@@ -16,7 +16,7 @@ public class Welcoming extends AppCompatActivity {
         setContentView(R.layout.activity_welcoming);
 
         buttonNext = (Button) findViewById(R.id.button_next);
-        buttonNext.setOnClickListener(new View.OnClickListener(){
+        buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 logic.openActivity(Welcoming.this, PersonalInformation.class);

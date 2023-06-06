@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 
 public class FriendList extends AppCompatActivity {
 
-    private ImageButton buttonHome, buttonSocials, buttonStatistics, buttonFriendGarden,buttonRequest; // list of buttons
+    private ImageButton buttonHome, buttonSocials, buttonStatistics, buttonFriendGarden, buttonRequest; // list of buttons
     private Logic logic = new Logic();
 
     @Override
@@ -17,7 +17,7 @@ public class FriendList extends AppCompatActivity {
         setContentView(R.layout.activity_friend_list);
 
         buttonStatistics = (ImageButton) findViewById(R.id.statistics_button);
-        buttonStatistics.setOnClickListener(new View.OnClickListener(){
+        buttonStatistics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -26,8 +26,8 @@ public class FriendList extends AppCompatActivity {
 
         });
 
-        buttonHome = (ImageButton)findViewById(R.id.home_button);
-        buttonHome.setOnClickListener(new View.OnClickListener(){
+        buttonHome = (ImageButton) findViewById(R.id.home_button);
+        buttonHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -36,7 +36,7 @@ public class FriendList extends AppCompatActivity {
         });
 
         buttonSocials = (ImageButton) findViewById(R.id.socials_button);
-        buttonSocials.setOnClickListener(new View.OnClickListener(){
+        buttonSocials.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -45,7 +45,7 @@ public class FriendList extends AppCompatActivity {
         });
 
         buttonFriendGarden = (ImageButton) findViewById(R.id.button_profile_friendNr1);
-        buttonFriendGarden.setOnClickListener(new View.OnClickListener(){
+        buttonFriendGarden.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -55,7 +55,7 @@ public class FriendList extends AppCompatActivity {
         });
 
         buttonRequest = (ImageButton) findViewById(R.id.request_button);
-        buttonRequest.setOnClickListener(new View.OnClickListener(){
+        buttonRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

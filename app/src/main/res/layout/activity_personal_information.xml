@@ -25,6 +25,20 @@
             android:textStyle="bold" />
     </Toolbar>
 
+    <ImageButton
+        android:id="@+id/button_close_personal_info"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circle"
+        android:backgroundTint="@color/red"
+        android:src="@drawable/icon_close"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.023" />
+
     <Button
         android:id="@+id/button_done"
         android:layout_width="wrap_content"

@@ -27,7 +27,7 @@ import org.w3c.dom.Text;
 import java.io.File;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Homepage extends AppCompatActivity  {
+public class Homepage extends AppCompatActivity {
     private ImageButton buttonProfile, buttonStatistics, buttonSocials, buttonStore, buttonGarden, buttonDrops;
 
     private ImageView profilePicture;
@@ -43,10 +43,10 @@ public class Homepage extends AppCompatActivity  {
         setContentView(R.layout.activity_homepage);
 
         profilePicture = findViewById(R.id.button_profile);
-        buttonProfile = (ImageButton)findViewById(R.id.button_profile);
+        buttonProfile = (ImageButton) findViewById(R.id.button_profile);
         loadImageIfThere();
 
-        buttonProfile.setOnClickListener(new View.OnClickListener(){
+        buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -63,7 +63,7 @@ public class Homepage extends AppCompatActivity  {
         });
 
         buttonGarden = (ImageButton) findViewById(R.id.to_garden_button);
-        buttonGarden.setOnClickListener(new View.OnClickListener(){
+        buttonGarden.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -81,8 +81,8 @@ public class Homepage extends AppCompatActivity  {
             }
         });
 
-        buttonDrops = (ImageButton)findViewById(R.id.button_drops);
-        buttonDrops.setOnClickListener(new View.OnClickListener(){
+        buttonDrops = (ImageButton) findViewById(R.id.button_drops);
+        buttonDrops.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -92,14 +92,14 @@ public class Homepage extends AppCompatActivity  {
 
     }
 
-    public void buttonPopUpWindow( View view ) {
+    public void buttonPopUpWindow(View view) {
         LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         View viewPopupwindow = set();
-        final PopupWindow popupWindow = new PopupWindow ( viewPopupwindow, 900, 900, false);
-        popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
+        final PopupWindow popupWindow = new PopupWindow(viewPopupwindow, 900, 900, false);
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
         //close pop-up
-        viewPopupwindow.setOnClickListener(new View.OnClickListener(){
+        viewPopupwindow.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -111,7 +111,7 @@ public class Homepage extends AppCompatActivity  {
 
     }
 
-    public View set(){
+    public View set() {
         PopUpWindow_coins pop = new PopUpWindow_coins();
         setContentView(R.layout.activity_homepage);
         ConstraintLayout mainLayout = (ConstraintLayout) findViewById(R.id.pop_up_window_coins);

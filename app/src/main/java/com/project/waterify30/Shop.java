@@ -21,6 +21,7 @@ public class Shop extends AppCompatActivity {
     private Logic logic = new Logic();
 
     public static final String KEY1 = "photo", KEY2 = "photo2";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +54,7 @@ public class Shop extends AppCompatActivity {
         plant1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,1);
+                PopUp(v, 1);
             }
         });
 
@@ -61,7 +62,7 @@ public class Shop extends AppCompatActivity {
         plant2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              PopUp(v,2);
+                PopUp(v, 2);
             }
         });
 
@@ -69,7 +70,7 @@ public class Shop extends AppCompatActivity {
         plant3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              PopUp(v,3);
+                PopUp(v, 3);
             }
         });
 
@@ -77,7 +78,7 @@ public class Shop extends AppCompatActivity {
         plant4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,4);
+                PopUp(v, 4);
             }
         });
 
@@ -85,7 +86,7 @@ public class Shop extends AppCompatActivity {
         plant5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,5);
+                PopUp(v, 5);
             }
         });
 
@@ -93,7 +94,7 @@ public class Shop extends AppCompatActivity {
         plant6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,6);
+                PopUp(v, 6);
             }
         });
 
@@ -101,7 +102,7 @@ public class Shop extends AppCompatActivity {
         plant7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,7);
+                PopUp(v, 7);
             }
         });
 
@@ -109,7 +110,7 @@ public class Shop extends AppCompatActivity {
         plant5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,8);
+                PopUp(v, 8);
             }
         });
 
@@ -117,7 +118,7 @@ public class Shop extends AppCompatActivity {
         plant9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,9);
+                PopUp(v, 9);
             }
         });
 
@@ -125,7 +126,7 @@ public class Shop extends AppCompatActivity {
         plant10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,10);
+                PopUp(v, 10);
             }
         });
 
@@ -133,7 +134,7 @@ public class Shop extends AppCompatActivity {
         plant11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,11);
+                PopUp(v, 11);
             }
         });
 
@@ -141,7 +142,7 @@ public class Shop extends AppCompatActivity {
         plant12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,12);
+                PopUp(v, 12);
             }
         });
 
@@ -149,7 +150,7 @@ public class Shop extends AppCompatActivity {
         plant13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,13);
+                PopUp(v, 13);
             }
         });
 
@@ -157,7 +158,7 @@ public class Shop extends AppCompatActivity {
         plant14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,14);
+                PopUp(v, 14);
             }
         });
 
@@ -165,7 +166,7 @@ public class Shop extends AppCompatActivity {
         plant15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,15);
+                PopUp(v, 15);
             }
         });
 
@@ -173,7 +174,7 @@ public class Shop extends AppCompatActivity {
         plant16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,16);
+                PopUp(v, 16);
             }
         });
 
@@ -181,7 +182,7 @@ public class Shop extends AppCompatActivity {
         plant17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,17);
+                PopUp(v, 17);
             }
         });
 
@@ -189,7 +190,7 @@ public class Shop extends AppCompatActivity {
         plant18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,18);
+                PopUp(v, 18);
             }
         });
 
@@ -197,7 +198,7 @@ public class Shop extends AppCompatActivity {
         plant19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,19);
+                PopUp(v, 19);
             }
         });
 
@@ -205,7 +206,7 @@ public class Shop extends AppCompatActivity {
         plant20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,20);
+                PopUp(v, 20);
             }
         });
 
@@ -213,7 +214,7 @@ public class Shop extends AppCompatActivity {
         plant21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,21);
+                PopUp(v, 21);
             }
         });
 
@@ -221,7 +222,7 @@ public class Shop extends AppCompatActivity {
         plant22.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,22);
+                PopUp(v, 22);
             }
         });
 
@@ -229,7 +230,7 @@ public class Shop extends AppCompatActivity {
         plant23.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,23);
+                PopUp(v, 23);
             }
         });
 
@@ -237,7 +238,7 @@ public class Shop extends AppCompatActivity {
         plant24.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,24);
+                PopUp(v, 24);
             }
         });
 
@@ -245,7 +246,7 @@ public class Shop extends AppCompatActivity {
         plant25.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,25);
+                PopUp(v, 25);
             }
         });
 
@@ -253,7 +254,7 @@ public class Shop extends AppCompatActivity {
         plant26.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,26);
+                PopUp(v, 26);
             }
         });
 
@@ -261,7 +262,7 @@ public class Shop extends AppCompatActivity {
         plant27.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,27);
+                PopUp(v, 27);
             }
         });
 
@@ -269,7 +270,7 @@ public class Shop extends AppCompatActivity {
         plant28.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,28);
+                PopUp(v, 28);
             }
         });
 
@@ -277,7 +278,7 @@ public class Shop extends AppCompatActivity {
         plant29.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,29);
+                PopUp(v, 29);
             }
         });
 
@@ -285,14 +286,14 @@ public class Shop extends AppCompatActivity {
         plant30.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopUp(v,30);
+                PopUp(v, 30);
             }
         });
 
     }
 
 
-    public View set (int i){
+    public View set(int i) {
         PopUpWindow_Price pops = new PopUpWindow_Price();
         setContentView(R.layout.activity_shop);
         ConstraintLayout mainLayout = (ConstraintLayout) findViewById(R.id.pop_up_window_price);
@@ -309,17 +310,17 @@ public class Shop extends AppCompatActivity {
     }
 
 
-    public void PopUp ( View view , int i) {
+    public void PopUp(View view, int i) {
         LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         View viewPopupwindow = set(i);
-        final PopupWindow popupWindow = new PopupWindow ( viewPopupwindow, 900, 900, false);
-        popupWindow.showAtLocation(view, Gravity.CENTER,0,0);
+        final PopupWindow popupWindow = new PopupWindow(viewPopupwindow, 900, 900, false);
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
         //choosing YES or NO
         Button yes = (Button) viewPopupwindow.findViewById(R.id.yes);
         Button no = (Button) viewPopupwindow.findViewById(R.id.no);
 
-        no.setOnClickListener(new View.OnClickListener(){
+        no.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -329,7 +330,7 @@ public class Shop extends AppCompatActivity {
 
         });
 
-        yes.setOnClickListener(new View.OnClickListener(){
+        yes.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -357,8 +358,6 @@ public class Shop extends AppCompatActivity {
         });
 
     }
-
-
 
 
 }

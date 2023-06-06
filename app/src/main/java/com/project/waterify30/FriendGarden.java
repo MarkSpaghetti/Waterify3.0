@@ -10,6 +10,7 @@ public class FriendGarden extends AppCompatActivity {
 
     private ImageButton buttonHome;
     private Logic logic = new Logic();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
