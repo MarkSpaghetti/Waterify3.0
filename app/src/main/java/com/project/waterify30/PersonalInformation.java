@@ -3,17 +3,12 @@ package com.project.waterify30;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.google.android.material.textfield.TextInputEditText;
 
 public class PersonalInformation extends AppCompatActivity {
 
@@ -35,12 +30,7 @@ public class PersonalInformation extends AppCompatActivity {
 
         buttonClose = findViewById(R.id.button_close_personal_info);
 
-        buttonClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logic.openActivity(getApplicationContext(), Profile.class);
-            }
-        });
+        buttonClose.setOnClickListener(v -> logic.openActivity(getApplicationContext(), Profile.class));
 
         // health problems spinner definition
         Spinner spinnerHealth = findViewById(R.id.health_spinner);
@@ -62,21 +52,31 @@ public class PersonalInformation extends AppCompatActivity {
         spinnerSex.setAdapter(adapterSex);
 
         buttonDone = findViewById(R.id.button_done);
-        buttonDone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.index_health = spinnerHealth.getSelectedItemPosition();
-                MainActivity.index_sex = spinnerSex.getSelectedItemPosition();
-                MainActivity.index_sport = spinnerSports.getSelectedItemPosition();
-                ageET = findViewById(R.id.age_enter);
-                MainActivity.age = Integer.parseInt(ageET.getText().toString());
-                weightET = findViewById(R.id.weight_enter);
-                MainActivity.weight = Integer.parseInt(weightET.getText().toString());
-                MainActivity.daily_goal = dailyIntakeCalculator();
-                logic.openActivity(PersonalInformation.this, Profile.class);
-            }
-        });
 
+        buttonDone.setOnClickListener(v -> {
+            MainActivity.index_health = spinnerHealth.getSelectedItemPosition();
+            MainActivity.index_sex = spinnerSex.getSelectedItemPosition();
+            MainActivity.index_sport = spinnerSports.getSelectedItemPosition();
+            ageET = findViewById(R.id.age_enter);
+            weightET = findViewById(R.id.weight_enter);
+
+            String ageText = ageET.getText().toString();
+            if (ageText.isEmpty()) {
+                Toast.makeText(getApplicationContext(), "Enter age", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            MainActivity.age = Integer.parseInt(ageText);
+
+            String weightText = weightET.getText().toString();
+            if (weightText.isEmpty()) {
+                Toast.makeText(getApplicationContext(), "Enter weight", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            MainActivity.weight = Integer.parseInt(weightText);
+
+            MainActivity.daily_goal = dailyIntakeCalculator();
+            logic.openActivity(getApplicationContext(), Profile.class);
+        });
 
     }
 

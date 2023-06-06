@@ -2,52 +2,49 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:paddingBottom="20dp"
-    android:paddingTop="20dp"
     android:background="@color/light_green"
-    android:id="@+id/parent_layout">
+    android:paddingLeft="10dp"
+    android:paddingTop="20dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="20dp">
 
     <ImageButton
         android:id="@+id/statistics_button"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:src="@drawable/baseline_bar_chart_24"
         android:background="@drawable/hp_buttons_background"
         android:padding="10dp"
+        android:src="@drawable/baseline_bar_chart_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/home_button"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/home_button"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_home_black_24dp"
         android:background="@drawable/hp_buttons_background"
         android:padding="10dp"
+        android:src="@drawable/ic_home_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/statistics_button"
         app:layout_constraintEnd_toStartOf="@id/socials_button"
-        />
+        app:layout_constraintStart_toEndOf="@+id/statistics_button" />
 
     <ImageButton
         android:id="@+id/socials_button"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
-        android:src="@drawable/baseline_people_outline_24dp"
         android:background="@drawable/hp_buttons_background"
         android:padding="10dp"
+        android:src="@drawable/baseline_people_outline_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/home_button"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toEndOf="@+id/home_button" />
 
     <ImageButton
         android:id="@+id/button_profile"
@@ -59,27 +56,20 @@
         android:src="@drawable/hp_person_outline_24dp"
 
         app:layout_constraintBottom_toBottomOf="@+id/navigation_buttons"
-        app:layout_constraintEnd_toEndOf="@+id/to_garden_button"
+        app:layout_constraintEnd_toEndOf="@+id/homepage_plant"
         app:layout_constraintTop_toTopOf="@+id/navigation_buttons" />
 
     <ImageButton
-        android:id="@+id/to_garden_button"
+        android:id="@+id/homepage_plant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/green_background"
-        android:src="@drawable/plant_10"
-        android:scaleType="fitCenter"
-
-        android:paddingTop="80dp"
-        android:paddingBottom="80dp"
-        android:paddingRight="30dp"
         android:paddingLeft="30dp"
-
-
-
-
-
-
+        android:paddingTop="80dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="80dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/plant_10"
         app:layout_constraintBottom_toTopOf="@+id/home_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/navigation_buttons"
@@ -125,7 +115,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/hp_buttons_background"
-        android:onClick="quizz"
+        android:onClick="quiz"
         android:src="@drawable/baseline_school_24"
 
         app:layout_constraintBottom_toBottomOf="@id/navigation_buttons"
@@ -140,8 +130,7 @@
         android:background="@drawable/hp_buttons_background"
         android:src="@drawable/baseline_shopping_cart_24"
         app:layout_constraintBottom_toBottomOf="@id/navigation_buttons"
-        app:layout_constraintEnd_toEndOf="@+id/navigation_buttons"
-        />
+        app:layout_constraintEnd_toEndOf="@+id/navigation_buttons" />
     />
 
 

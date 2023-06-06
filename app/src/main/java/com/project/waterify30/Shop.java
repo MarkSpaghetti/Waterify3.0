@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class Shop extends AppCompatActivity {
 
     private ImageButton buttonHome, buttonStats;
-    private Logic logic = new Logic();
+    private final Logic logic = new Logic();
 
     public static final String KEY1 = "photo", KEY2 = "photo2";
 

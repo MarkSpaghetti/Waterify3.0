@@ -16,26 +16,17 @@ public class Second3Fragment extends Fragment {
     private FragmentSecond3Binding binding;
 
     @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
-    ) {
-
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentSecond3Binding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        binding.buttonSecond.setOnClickListener(v_ ->
                 NavHostFragment.findNavController(Second3Fragment.this)
-                        .navigate(R.id.action_Second3Fragment_to_First3Fragment);
-            }
-        });
+                        .navigate(R.id.action_Second3Fragment_to_First3Fragment));
     }
 
     @Override

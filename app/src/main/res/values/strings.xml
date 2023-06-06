@@ -1,11 +1,18 @@
 <resources>
-    <string name="app_name">Waterify3.0</string>
+    <string name="app_name">Waterify</string>
     <string name="title_activity_friends_list">Friends_List</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="level_text">Level %1$d</string>
+    <string name="droplets_text">%1$d droplets</string>
+    <string name="age_text">%d years</string>
+    <string name="weight_text">%d kg</string>
+
+
+
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris

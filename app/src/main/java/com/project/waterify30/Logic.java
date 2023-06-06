@@ -1,54 +1,28 @@
 package com.project.waterify30;
 
-import static android.content.Context.LAYOUT_INFLATER_SERVICE;
-import static android.content.Context.MODE_PRIVATE;
-
-
-import static androidx.core.content.ContextCompat.getSystemService;
-
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
-import android.text.InputFilter;
-import android.text.Spanned;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.PopupWindow;
-import android.view.LayoutInflater;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseUser;
-
-import java.io.File;
-
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 
 public class Logic {
 
 
-    public void openActivity(Context fromActivity, Class activityToOpen) {
-        Intent intent = new Intent(fromActivity, activityToOpen);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        fromActivity.startActivity(intent);
-    }
-
-//    private val dbfriends = FirebaseDatabase.getInstance().getReference();
-//    private val _result = MutableLiveData<Exception?>()
-//    val result: LiveData<Exception?> get() = _result
+        public void openActivity(Context fromActivity, Class activityToOpen) {
+            Intent intent = new Intent(fromActivity, activityToOpen);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            fromActivity.startActivity(intent);
+        }
 
 
-    public void setImage(Context fromActivity, Class activityToOpen) {
-        Intent intent = new Intent();
-    }
+
 
     public String ignoreEmail(FirebaseUser user) {
         String email = user.getEmail();
@@ -61,6 +35,14 @@ public class Logic {
         return username;
     }
 
+
+    public void setClickListener(Button button, int cupSize, String toastMessage, Context fromActivity) {
+        button.setOnClickListener(v -> {
+            MainActivity.cup = cupSize;
+            Toast.makeText(fromActivity, toastMessage, Toast.LENGTH_LONG).show();
+            openActivity(fromActivity, Homepage.class);
+        });
+    }
     public Bitmap getRoundedBitmap(Bitmap bitmap) {
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();

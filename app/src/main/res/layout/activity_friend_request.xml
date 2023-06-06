@@ -382,20 +382,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageButton
-        android:id="@+id/button_exit"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/circle"
-        android:backgroundTint="#C30010"
-        android:src="@drawable/baseline_not_interested_24"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewTop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-        app:layout_constraintStart_toStartOf="@+id/imageViewTop"
-        app:layout_constraintTop_toTopOf="@+id/imageViewTop"
-        app:layout_constraintVertical_bias="0.228" />
 
+    <ImageButton
+        android:id="@+id/button_close_friend_requests"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/circle"
+        android:src="@drawable/icon_close"
+        android:backgroundTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
     <TextView
         android:id="@+id/requesttext"
         android:layout_width="151dp"

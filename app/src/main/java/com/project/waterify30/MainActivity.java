@@ -1,21 +1,15 @@
 package com.project.waterify30;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton button;
-    Logic logic;
-    FirebaseUser mAuth;
+    public ImageButton button;
+
    public static String imagePath;
+
+   public static int homepagePlant = 0;
    public static int cup;
    public static int daily_progress;
    public static  int daily_goal;
@@ -27,13 +21,5 @@ public class MainActivity extends AppCompatActivity {
    public static int index_sex = 0;
    public static int index_sport = 0;
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-
-
-    }
 
 }

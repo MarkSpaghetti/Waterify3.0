@@ -2,21 +2,17 @@ package com.project.waterify30;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -35,13 +31,10 @@ import java.util.Locale;
 
 public class Profile extends AppCompatActivity {
 
-    private Logic logic = new Logic();
-    private FirebaseAuth auth;
+    private final Logic logic = new Logic();
+
     private FirebaseUser user;
-    private ImageButton buttonClose, buttonSettings, editProfilePic;
-    private Button buttonSignout, buttonPersonalData;
-    private TextView email, username, age, weight, sport, health, gender;
-    private ImageView profilePicture;
+
     private static final int IMAGE_PICK_CODE = 1000;
     private static final int PERMISSION_CODE = 1001;
     String imagePath;
@@ -50,16 +43,26 @@ public class Profile extends AppCompatActivity {
     String[] sexItems = {"Male", "Female"};
     String[] sportItems = {"Never", "Low", "Medium", "High"};
 
+    private TextView email, username;
+
+    private ImageView profilePicture;
+
+
     private Bitmap originalBitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        FirebaseAuth auth;
+        ImageButton buttonClose, buttonSettings, editProfilePic;
+        Button buttonSignOut, buttonPersonalData;
+        TextView age, weight, sport, health, gender;
         auth = FirebaseAuth.getInstance();
-        buttonSignout = findViewById(R.id.button_logout);
+        buttonSignOut = findViewById(R.id.button_logout);
         email = findViewById(R.id.email_shown);
-        buttonClose = (ImageButton) findViewById(R.id.button6);
+        buttonClose = findViewById(R.id.button6);
         buttonSettings = findViewById(R.id.settingsButton);
         username = findViewById(R.id.username_shown);
         profilePicture = findViewById(R.id.profile_picture);
@@ -77,58 +80,31 @@ public class Profile extends AppCompatActivity {
         loadImageIfThere();
         displayUserData();
 
-        age.setText(String.valueOf(MainActivity.age) + " years");
-        weight.setText(String.valueOf(MainActivity.weight) + " kg");
+        age.setText(getString(R.string.age_text, MainActivity.age));
+        weight.setText(getString(R.string.weight_text, MainActivity.weight));
         health.setText(String.valueOf(healthItems[MainActivity.index_health]));
         sport.setText(String.valueOf(sportItems[MainActivity.index_sport]));
         gender.setText(String.valueOf(sexItems[MainActivity.index_sex]));
 
-        editProfilePic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
-                        String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE};
-                        requestPermissions(permissions, PERMISSION_CODE);
-                    } else {
-                        pickImageFromGallery();
-                    }
+        editProfilePic.setOnClickListener(v -> {
+
+                if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+                    String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE};
+                    requestPermissions(permissions, PERMISSION_CODE);
+                } else {
+                    pickImageFromGallery();
                 }
-            }
         });
 
-        buttonPersonalData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logic.openActivity(getApplicationContext(), PersonalInformation.class);
-            }
-        });
-        buttonSignout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        buttonPersonalData.setOnClickListener(v-> logic.openActivity(getApplicationContext(), PersonalInformation.class));
+        buttonSignOut.setOnClickListener(v->{
                 FirebaseAuth.getInstance().signOut();
                 logic.openActivity(getApplicationContext(), LogIn.class);
-            }
-        });
+            });
 
-        buttonClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // BitmapDrawable drawable = (BitmapDrawable) profilePicture.getDrawable();
-                //  Bitmap updatedBitmap = drawable.getBitmap();
+        buttonClose.setOnClickListener(v-> logic.openActivity(getApplicationContext(), Homepage.class));
 
-                logic.openActivity(Profile.this, Homepage.class);
-
-            }
-        });
-
-        buttonSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logic.openActivity(Profile.this, Settings.class);
-
-            }
-        });
+        buttonSettings.setOnClickListener(v -> logic.openActivity(getApplicationContext(),Settings.class));
     }
 
     private void pickImageFromGallery() {
@@ -140,30 +116,33 @@ public class Profile extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case PERMISSION_CODE: {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    pickImageFromGallery();
-                } else {
-                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
-                }
+        if (requestCode == PERMISSION_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                pickImageFromGallery();
+            } else {
+                Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
             }
         }
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == IMAGE_PICK_CODE) {
-            profilePicture.setImageURI(data.getData());
-            profilePicture.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            if (data != null && data.getData() != null) {
+                profilePicture.setImageURI(data.getData());
+                profilePicture.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
-            // Save the original bitmap instead of the circular bitmap
-            BitmapDrawable drawable = (BitmapDrawable) profilePicture.getDrawable();
-            originalBitmap = drawable.getBitmap();
-            Bitmap circularBitmap = logic.getRoundedBitmap(originalBitmap);
-            profilePicture.setImageBitmap(circularBitmap);
-            saveImageToFile(originalBitmap); // Save the original bitmap
+                // Save the original bitmap instead of the circular bitmap
+                BitmapDrawable drawable = (BitmapDrawable) profilePicture.getDrawable();
+                originalBitmap = drawable.getBitmap();
+                Bitmap circularBitmap = logic.getRoundedBitmap(originalBitmap);
+                profilePicture.setImageBitmap(circularBitmap);
+                saveImageToFile(originalBitmap); // Save the original bitmap
+            } else {
+                Toast.makeText(this, "Failed to get image", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

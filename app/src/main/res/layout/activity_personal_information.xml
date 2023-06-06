@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Settings"
-    android:background="@color/red">
+    android:background="@color/red"
+    tools:context=".Settings">
 
     <Toolbar
         android:id="@+id/toolbar"
@@ -32,20 +32,20 @@
         android:background="@drawable/circle"
         android:backgroundTint="@color/red"
         android:src="@drawable/icon_close"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.225" />
 
     <Button
         android:id="@+id/button_done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/round_edges"
-        android:text="Done"
         android:backgroundTint="@color/yellow"
+        android:text="Done"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.904"
@@ -57,16 +57,15 @@
         android:id="@+id/linearLayout"
         android:layout_width="346dp"
         android:layout_height="542dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginBottom="90dp"
+        android:layout_marginTop="9dp"
         android:background="@drawable/green_background"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.244">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/age"
@@ -83,7 +82,7 @@
                 android:id="@+id/age_enter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"/>
+                android:inputType="number" />
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -102,7 +101,7 @@
                 android:id="@+id/weight_enter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"/>
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,8 +126,7 @@
             android:id="@+id/sex_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            />
+            android:layout_margin="30dp" />
 
 
         <Spinner
@@ -138,7 +136,6 @@
             android:layout_margin="30dp" />
 
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
