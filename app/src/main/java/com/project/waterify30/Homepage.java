@@ -96,7 +96,7 @@ public class Homepage extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
 
-                logic.openActivity(Homepage.this, FriendList.class);
+                logic.openActivity(Homepage.this, userlist.class);
             }
         });
 
