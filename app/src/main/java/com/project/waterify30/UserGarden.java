@@ -1,18 +1,14 @@
 package com.project.waterify30;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 public class UserGarden extends AppCompatActivity {
 
     private ImageButton buttonHome;
-    private Logic logic = new Logic();
+    private final Logic logic = new Logic();
     private ImageButton[] plants = new ImageButton[30];
 
     @Override
