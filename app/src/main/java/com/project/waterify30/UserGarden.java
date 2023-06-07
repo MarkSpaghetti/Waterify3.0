@@ -7,7 +7,6 @@ import android.widget.ImageButton;
 
 public class UserGarden extends AppCompatActivity {
 
-    private ImageButton buttonHome;
     private final Logic logic = new Logic();
     private ImageButton[] plants = new ImageButton[30];
 
@@ -16,6 +15,7 @@ public class UserGarden extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_garden);
 
+        ImageButton buttonHome;
         buttonHome = findViewById(R.id.home_button);
         buttonHome.setOnClickListener(v -> logic.openActivity(UserGarden.this, Homepage.class));
 

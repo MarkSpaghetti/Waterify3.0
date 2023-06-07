@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -18,11 +17,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class userlist extends AppCompatActivity {
+public class UserList extends AppCompatActivity {
 
     Button buttonRequest;
     ImageButton buttonStatistics, buttonHome, buttonSocials;
-    private Logic logic = new Logic();
+    private final Logic logic = new Logic();
 
     RecyclerView recyclerView;
     DatabaseReference database;
@@ -43,11 +42,11 @@ public class userlist extends AppCompatActivity {
         myAdapter = new MyAdapter(this, list);
         recyclerView.setAdapter(myAdapter);
 
-        database.addValueEventListener(new ValueEventListener(){
+        database.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     User user = dataSnapshot.getValue(User.class);
                     list.add(user);
 
@@ -62,42 +61,14 @@ public class userlist extends AppCompatActivity {
         });
 
         buttonRequest = (Button) findViewById(R.id.request_button);
-        buttonRequest.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-
-                logic.openActivity(userlist.this, FriendRequest.class);
-            }
-
-        });
+        buttonRequest.setOnClickListener(v -> logic.openActivity(getApplicationContext(), FriendRequest.class));
 
         buttonStatistics = (ImageButton) findViewById(R.id.statistics_button);
-        buttonStatistics.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-
-                logic.openActivity(userlist.this, Statistics.class);
-            }
-
-        });
-
-        buttonHome = (ImageButton)findViewById(R.id.home_button);
-        buttonHome.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-
-                logic.openActivity(userlist.this, Homepage.class);
-            }
-        });
+        buttonStatistics.setOnClickListener(v -> logic.openActivity(getApplicationContext(), Statistics.class));
+        buttonHome = (ImageButton) findViewById(R.id.home_button);
+        buttonHome.setOnClickListener(v -> logic.openActivity(getApplicationContext(), Homepage.class));
 
         buttonSocials = (ImageButton) findViewById(R.id.socials_button);
-        buttonSocials.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-
-                logic.openActivity(userlist.this, userlist.class);
-            }
-        });
-
+        buttonSocials.setOnClickListener(v -> logic.openActivity(getApplicationContext(), UserList.class));
     }
 }

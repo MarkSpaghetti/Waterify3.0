@@ -52,7 +52,7 @@ public class Homepage extends AppCompatActivity {
         buttonDrops.setOnClickListener(v-> logic.openActivity(Homepage.this, Cups.class));
 
         buttonSocials = findViewById(R.id.socials_button);
-        buttonSocials.setOnClickListener(v-> logic.openActivity(Homepage.this, userlist.class));
+        buttonSocials.setOnClickListener(v-> logic.openActivity(Homepage.this, UserList.class));
 
     }
 

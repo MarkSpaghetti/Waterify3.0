@@ -17,7 +17,7 @@ public class FriendRequest extends AppCompatActivity {
         ImageButton buttonClose;
 
         buttonClose = findViewById(R.id.button_close_friend_requests);
-        buttonClose.setOnClickListener(v -> logic.openActivity(FriendRequest.this, userlist.class));
+        buttonClose.setOnClickListener(v -> logic.openActivity(FriendRequest.this, UserList.class));
 
 
     }

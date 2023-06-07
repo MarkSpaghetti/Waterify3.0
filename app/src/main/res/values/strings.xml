@@ -10,7 +10,9 @@
     <string name="droplets_text">%1$d droplets</string>
     <string name="age_text">%d years</string>
     <string name="weight_text">%d kg</string>
-
+    <string name="plant_cost">This plant costs %1$d droplets. Do you want to buy it?</string>
+    <string name="daily_progress_text">%1$d %%</string>
+    <string name="daily_goal_text">Daily goal:\n%s ml</string>
 
 
 

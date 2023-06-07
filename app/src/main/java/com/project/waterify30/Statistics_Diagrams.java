@@ -1,39 +1,27 @@
 package com.project.waterify30;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
-
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-
 import java.util.ArrayList;
 
 public class Statistics_Diagrams extends AppCompatActivity {
 
-    private ImageButton closeButton;
-
-    private Logic logic = new Logic();
+    private final Logic logic = new Logic();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ImageButton closeButton;
         setContentView(R.layout.activity_statistics_diagrams);
 
         closeButton = findViewById(R.id.diagram_close_button);
-        closeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logic.openActivity(Statistics_Diagrams.this, Statistics.class);
-
-            }
-        });
+        closeButton.setOnClickListener(v-> logic.openActivity(Statistics_Diagrams.this, Statistics.class));
 
         BarChart barChart = (BarChart) findViewById(R.id.DailyBarChart);
 
