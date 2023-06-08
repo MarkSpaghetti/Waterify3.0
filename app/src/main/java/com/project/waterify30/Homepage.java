@@ -78,8 +78,6 @@ public class Homepage extends AppCompatActivity {
         View myLayout = inflater.inflate(R.layout.activity_pop_up_window_coins, mainLayout, false);
 
         // make changes to our custom layout and its subviews
-        TextView txtLevel =  myLayout.findViewById(R.id.textView_level);
-        txtLevel.setText(getString(R.string.level_text, pop.getLevel()));
         TextView txt_droplets = myLayout.findViewById(R.id.textView_droplets);
         txt_droplets.setText(getString(R.string.droplets_text, pop.getDroplets()));
         return myLayout;

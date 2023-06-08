@@ -12,21 +12,25 @@ import android.widget.Toast;
 
 public class PersonalInformation extends AppCompatActivity {
 
-    String[] healthItems = {"No", "Yes"};
-    String[] sexItems = {"Male", "Female"};
-    String[] sportItems = {"Never", "Low", "Medium", "High"};
-    EditText ageET, weightET;
-    int sport, result;
-    Button buttonDone;
-    Logic logic;
 
-    ImageButton buttonClose;
+    private final Logic logic = new Logic();
+
+    int sport, result;
+    private final String[] healthItems = {"No", "Yes"};
+    private final String[] sexItems = {"Male", "Female"};
+    private final String[] sportItems = {"Never", "Low", "Medium", "High"};
+    private EditText ageET, weightET;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_information);
-        logic = new Logic();
+
+
+        Button buttonDone;
+        ImageButton buttonClose;
+
 
         buttonClose = findViewById(R.id.button_close_personal_info);
 
@@ -80,29 +84,32 @@ public class PersonalInformation extends AppCompatActivity {
 
     }
 
-
     private int dailyIntakeCalculator() {
-        if (MainActivity.index_sport == 0) { //never
-            sport = 0;
-        } else if (MainActivity.index_sport == 1) { //low
-            sport = 5;
-        } else if (MainActivity.index_sport == 2) { //medium
-            sport = 10;
-        } else { //high
-            sport = 15;
-        }
 
-        if (MainActivity.index_sex == 0) { //male
+        switch (MainActivity.index_sport) {
+            case 0: // never
+                sport = 0;
+                break;
+            case 1: // low
+                sport = 5;
+                break;
+            case 2: // medium
+                sport = 10;
+                break;
+            case 3: // high
+                sport = 15;
+                break;
+        }
+        if (MainActivity.index_sex == 0) { // male
             result = MainActivity.weight * (40 + sport);
-        } else { //female
+        } else { // female
             result = MainActivity.weight * (30 + sport);
         }
-
         if (MainActivity.index_health == 1) {
-            double d = result * 1.3;
-            result = (int) d;
+            result *= 1.3;
         }
         return result;
     }
+
 
 }
