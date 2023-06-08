@@ -15,10 +15,10 @@ import com.google.firebase.auth.FirebaseUser;
 public class Logic {
 
 
-    public void openActivity(Context fromActivity, Class activityToOpen) {
-        Intent intent = new Intent(fromActivity, activityToOpen);
+    public void openActivity(Context fromContext, Class<?> activityToOpen) {
+        Intent intent = new Intent(fromContext, activityToOpen);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        fromActivity.startActivity(intent);
+        fromContext.startActivity(intent);
     }
 
 
