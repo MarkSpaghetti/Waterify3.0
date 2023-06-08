@@ -15,13 +15,11 @@ import com.google.firebase.auth.FirebaseUser;
 public class Logic {
 
 
-        public void openActivity(Context fromActivity, Class activityToOpen) {
-            Intent intent = new Intent(fromActivity, activityToOpen);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            fromActivity.startActivity(intent);
-        }
-
-
+    public void openActivity(Context fromActivity, Class activityToOpen) {
+        Intent intent = new Intent(fromActivity, activityToOpen);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        fromActivity.startActivity(intent);
+    }
 
 
     public String ignoreEmail(FirebaseUser user) {
@@ -43,6 +41,7 @@ public class Logic {
             openActivity(fromActivity, Homepage.class);
         });
     }
+
     public Bitmap getRoundedBitmap(Bitmap bitmap) {
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
