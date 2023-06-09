@@ -18,8 +18,6 @@ public class Cups extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cups);
 
-        fiftyML = findViewById(R.id.fifty_ml);
-
         buttonClose = findViewById(R.id.button_close_cupsize);
 
         buttonClose.setOnClickListener(v -> logic.openActivity(getApplicationContext(), Homepage.class));

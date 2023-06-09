@@ -19,7 +19,7 @@ public class Statistics extends AppCompatActivity {
         setContentView(R.layout.activity_statistics);
 
         ImageButton buttonDiagrams, buttonHome;
-        int update = 0;
+        int update;
         ProgressBar progressBar;
         TextView textView, daily_goal_tw;
 

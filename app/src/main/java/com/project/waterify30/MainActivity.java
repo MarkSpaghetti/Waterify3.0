@@ -6,9 +6,7 @@ import android.widget.ImageButton;
 public class MainActivity extends AppCompatActivity {
 
     public ImageButton button;
-
    public static String imagePath;
-
    public static int homepagePlant = 0;
    public static int cup;
    public static int daily_progress;

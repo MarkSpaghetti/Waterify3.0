@@ -21,7 +21,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Homepage extends AppCompatActivity {
 
     private final Logic logic = new Logic();
-
     private ImageButton buttonProfile, homepagePlant;
     private Bitmap originalBitmap;
     private String imagePath;
